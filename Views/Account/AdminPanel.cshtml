@@ -1,0 +1,12 @@
+﻿@model $safeprojectname$.Models.User
+
+@{
+    ViewBag.Title = "AdminPanel";
+    Layout = "~/Views/Shared/_AdminPanel.cshtml";
+}
+
+
+<h3 class="dark-blue">Information on File</h3>
+<div>
+    <p>@Html.DisplayNameFor(model => model.phone) @Html.DisplayFor(model => model.phone)</p>
+</div>

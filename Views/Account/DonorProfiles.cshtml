@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "DonorProfiles";
+    Layout = "~/Views/Shared/_AdminPanel.cshtml";
+}
+
+
+<h3 class="dark-blue">Donor Profiles</h3>
+
+<div class="distance">
+    @Html.ActionLink("Active Donor Profiles", "ViewDonorProfiles", "Account")
+</div>
+
+<div class="distance">
+    @Html.ActionLink("Create Donor Profile", "AddDonorProfiles", "Account")
+</div>

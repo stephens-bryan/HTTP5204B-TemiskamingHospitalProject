@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "GiftShop";
+    Layout = "~/Views/Shared/_AdminPanel.cshtml";
+}
+
+<h3 class="dark-blue">Gift Shop</h3>
+
+<div class="distance">
+    @Html.ActionLink("Active Gift Shop Items", "ViewGiftShopItems", "Account")
+</div>
+
+<div class="distance">
+    @Html.ActionLink("Create Gift Items", "CreateGiftItem", "Account")
+</div>

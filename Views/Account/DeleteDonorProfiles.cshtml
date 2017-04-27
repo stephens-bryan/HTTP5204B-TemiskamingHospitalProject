@@ -1,0 +1,31 @@
+﻿@model $safeprojectname$.Models.DonationProfile
+
+@{
+    ViewBag.Title = "DeleteDonorProfiles";
+    Layout = "~/Views/Shared/_AdminPanel.cshtml";
+}
+
+<h3>Delete Donor Profile</h3>
+
+        <div class="h4">
+            Donor Name
+        </div>
+        <div>
+            @Html.DisplayFor(model => model.Donation.donorFN) @Html.DisplayFor(model => model.Donation.donorLN)
+        </div>
+        <div class="h4">
+            @Html.DisplayNameFor(model => model.donationMessage)
+        </div>
+        <div>
+            @Html.DisplayFor(model => model.donationMessage)
+        </div>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" />
+        </div>
+    }
+
+

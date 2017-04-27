@@ -1,0 +1,49 @@
+﻿@model IEnumerable<$safeprojectname$.Models.GiftItem>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminPanel.cshtml";
+}
+
+<h3 class="dark-blue">View Gift Shop Items</h3>
+<div class="form-horizontal text-center">
+    <table>
+        <tr>
+            <th class="text-center distance">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th class="text-center distance">
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th class="text-center distance">
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="distance">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td class="distance">
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td class="distance">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td class="crud">
+                    @Html.ActionLink("Edit", "EditGiftItem", new { id = item.GiftItemId }, htmlAttributes: new { @class = "button-edit" })
+                </td>
+                <td class="crud">
+                    @Html.ActionLink("Delete", "Delete", new { id = item.GiftItemId }, htmlAttributes: new { @class = "button-delete" })
+                </td>
+
+            </tr>
+        }
+
+    </table>
+    </div>

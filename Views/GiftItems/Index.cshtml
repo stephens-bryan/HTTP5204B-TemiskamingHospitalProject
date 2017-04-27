@@ -1,0 +1,74 @@
+﻿@model $safeprojectname$.Models.GiftType
+
+@{
+    ViewBag.Title = "Index";
+ }
+
+@*<div class="wrapper">*@
+    <div id="page-content">
+        <div class="row">
+            <div class="col-xs-12 col-md-3">
+                <ul class="nav nav-pills nav-stacked">
+                    @if (Model.Name == "Chocolate")
+            {
+                        <li class="active">
+                            <a href="~/GiftItems/Index/1">Chocolate</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href="~/GiftItems/Index/1">Chocolate</a>
+                        </li>
+                    }
+                    @if (Model.Name == "Flowers")
+            {
+                        <li class="active">
+                            <a href="~/GiftItems/Index/2">Flowers</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href="~/GiftItems/Index/2">Flowers</a>
+                        </li>
+                    }
+                    @if (Model.Name == "Stuffed Animals")
+            {
+                        <li class="active">
+                            <a href="~/GiftItems/Index/3">Stuffed Animals</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href="~/GiftItems/Index/3">Stuffed Animals</a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-md-9">
+                <div class="row">
+                    @foreach (var item in Model.GiftItems)
+            {
+                        <div class="col-xs-12 col-md-3">
+                            <div class="thumbnail">
+
+                                <div class="caption text-center">
+                                    <p>
+                                        <b>Name:</b> <span>@item.Name</span>
+                                    </p>
+                                    <p>
+                                        <b>Price:</b> <span>@item.Price</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+@*</div>*@

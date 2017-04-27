@@ -1,0 +1,187 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>HTTP5204B-BryanStephens-Group1Work</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>HTTP5204B-BryanStephens-Group1Work</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="TemiskamingSandbox.csproj" File="TemiskamingSandbox.csproj" ReplaceParameters="true">
+      <Folder Name="App_Data" TargetFolderName="App_Data">
+        <ProjectItem ReplaceParameters="false" TargetFileName="PetaByte.mdf">PetaByte.mdf</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="PetaByte_log.ldf">PetaByte_log.ldf</ProjectItem>
+      </Folder>
+      <Folder Name="App_Start" TargetFolderName="App_Start">
+        <ProjectItem ReplaceParameters="true" TargetFileName="RouteConfig.cs">RouteConfig.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Content" TargetFolderName="Content">
+        <ProjectItem ReplaceParameters="true" TargetFileName="admin.css">admin.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-theme.css">bootstrap-theme.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-theme.css.map">bootstrap-theme.css.map</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-theme.min.css">bootstrap-theme.min.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-theme.min.css.map">bootstrap-theme.min.css.map</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.css">bootstrap.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.css.map">bootstrap.css.map</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.css">bootstrap.min.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.css.map">bootstrap.min.css.map</ProjectItem>
+        <Folder Name="opt-imgs" TargetFolderName="opt-imgs">
+          <ProjectItem ReplaceParameters="false" TargetFileName="codepen.svg">codepen.svg</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="email.svg">email.svg</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="git.svg">git.svg</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="link.svg">link.svg</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="linkedin.svg">linkedin.svg</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="nav-logo.jpg">nav-logo.jpg</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="opening-img-hp.jpg">opening-img-hp.jpg</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="petabyte-h-logo.png">petabyte-h-logo.png</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Site.css">Site.css</ProjectItem>
+      </Folder>
+      <Folder Name="Controllers" TargetFolderName="Controllers">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AccountController.cs">AccountController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="DonationProfilesController.cs">DonationProfilesController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ErrorController.cs">ErrorController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="GiftItemsController.cs">GiftItemsController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="HomeController.cs">HomeController.cs</ProjectItem>
+      </Folder>
+      <Folder Name="fonts" TargetFolderName="fonts">
+        <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.eot">glyphicons-halflings-regular.eot</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.svg">glyphicons-halflings-regular.svg</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.ttf">glyphicons-halflings-regular.ttf</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.woff">glyphicons-halflings-regular.woff</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.woff2">glyphicons-halflings-regular.woff2</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax">Global.asax</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax.cs">Global.asax.cs</ProjectItem>
+      <Folder Name="Models" TargetFolderName="Models">
+        <ProjectItem ReplaceParameters="true" TargetFileName="CustomAnnotations.cs">CustomAnnotations.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="GiftShop.cs">GiftShop.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PasswordReset.cs">PasswordReset.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="PetaByteLive.edmx">PetaByteLive.edmx</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PetaByteLive.Context.tt">PetaByteLive.Context.tt</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PetaByteLive.Context.cs">PetaByteLive.Context.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PetaByteLive.Designer.cs">PetaByteLive.Designer.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="PetaByteLive.edmx.diagram">PetaByteLive.edmx.diagram</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PetaByteLive.tt">PetaByteLive.tt</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Address.cs">Address.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="AddressDate.cs">AddressDate.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Addresses1.cs">Addresses1.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Alert.cs">Alert.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Cafeteria.cs">Cafeteria.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Cart.cs">Cart.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Contact.cs">Contact.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="CustomerOrder.cs">CustomerOrder.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Department.cs">Department.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Donation.cs">Donation.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="DonationHonour.cs">DonationHonour.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="DonationOccurence.cs">DonationOccurence.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="DonationProfile.cs">DonationProfile.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Donor.cs">Donor.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="DonorsProfile.cs">DonorsProfile.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="EmerageContact.cs">EmerageContact.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Employee.cs">Employee.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="EmployeeSchedule.cs">EmployeeSchedule.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="EmployeeStatu.cs">EmployeeStatu.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Faq.cs">Faq.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Feedback.cs">Feedback.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="GetHelp.cs">GetHelp.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="GiftItem.cs">GiftItem.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="GiftType.cs">GiftType.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="HospitalEvent.cs">HospitalEvent.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Insurance.cs">Insurance.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="JobApplicant.cs">JobApplicant.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="JobPosting.cs">JobPosting.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Navigation.cs">Navigation.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="OnCall.cs">OnCall.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="OrderPlaced.cs">OrderPlaced.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="OrderPlaced1.cs">OrderPlaced1.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Page.cs">Page.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Password.cs">Password.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Patient.cs">Patient.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PatientsRoom.cs">PatientsRoom.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PetaByteLive.cs">PetaByteLive.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Position.cs">Position.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Request.cs">Request.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="SubNavigation.cs">SubNavigation.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Symptom.cs">Symptom.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Ticket.cs">Ticket.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="User.cs">User.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Volunteer.cs">Volunteer.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="VolunteerApplicant.cs">VolunteerApplicant.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="WhatToBring.cs">WhatToBring.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="MyRoleProvider.cs">MyRoleProvider.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+        <Folder Name="PublishProfiles" TargetFolderName="PublishProfiles">
+          <ProjectItem ReplaceParameters="false" TargetFileName="http5204B-stephensbryan - Web Deploy.pubxml">http5204B-stephensbryan - Web Deploy.pubxml</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="Scripts" TargetFolderName="Scripts">
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.js">bootstrap.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.js">bootstrap.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="googlemaps.js">googlemaps.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.1.1.intellisense.js">jquery-3.1.1.intellisense.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.1.1.js">jquery-3.1.1.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.1.1.min.js">jquery-3.1.1.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.1.1.min.map">jquery-3.1.1.min.map</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.1.1.slim.js">jquery-3.1.1.slim.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.1.1.slim.min.js">jquery-3.1.1.slim.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-3.1.1.slim.min.map">jquery-3.1.1.slim.min.map</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate-vsdoc.js">jquery.validate-vsdoc.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.js">jquery.validate.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.min.js">jquery.validate.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.unobtrusive.js">jquery.validate.unobtrusive.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.validate.unobtrusive.min.js">jquery.validate.unobtrusive.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="modernizr-2.8.3.js">modernizr-2.8.3.js</ProjectItem>
+      </Folder>
+      <Folder Name="Views" TargetFolderName="Views">
+        <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+        <Folder Name="Account" TargetFolderName="Account">
+          <ProjectItem ReplaceParameters="true" TargetFileName="AddDonorProfiles.cshtml">AddDonorProfiles.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="AdminPanel.cshtml">AdminPanel.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ContactEdit.cshtml">ContactEdit.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="CreateGiftItem.cshtml">CreateGiftItem.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="DeleteDonorProfiles.cshtml">DeleteDonorProfiles.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="DonorProfiles.cshtml">DonorProfiles.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="EditDonorProfiles.cshtml">EditDonorProfiles.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="EditGiftitem.cshtml">EditGiftitem.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="getPassword.cshtml">getPassword.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="GiftShop.cshtml">GiftShop.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Login.cshtml">Login.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Reset.cshtml">Reset.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ResetPassword.cshtml">ResetPassword.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="TestDonorProfiles.cshtml">TestDonorProfiles.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ViewDonorProfiles.cshtml">ViewDonorProfiles.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ViewGiftShopItems.cshtml">ViewGiftShopItems.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Error" TargetFolderName="Error">
+          <ProjectItem ReplaceParameters="true" TargetFileName="NotFound.cshtml">NotFound.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="GiftItems" TargetFolderName="GiftItems">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Home" TargetFolderName="Home">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Shared" TargetFolderName="Shared">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_AdminLayout.cshtml">_AdminLayout.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_AdminPanel.cshtml">_AdminPanel.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Layout.cshtml">_Layout.cshtml</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="web.config">web.config</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

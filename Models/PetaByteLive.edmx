@@ -1,0 +1,3271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PetaByteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AddressDates">
+          <Key>
+            <PropertyRef Name="addressDateId" />
+          </Key>
+          <Property Name="addressDateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="addressDateFrom" Type="datetime" />
+          <Property Name="addressDateTo" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Addresses">
+          <Key>
+            <PropertyRef Name="addressId" />
+          </Key>
+          <Property Name="addressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="addressStreet" Type="varchar" MaxLength="100" />
+          <Property Name="addressProv" Type="varchar" MaxLength="100" />
+          <Property Name="addressCountry" Type="varchar" MaxLength="100" />
+          <Property Name="postal" Type="varchar" MaxLength="50" />
+          <Property Name="addressDateId" Type="int" />
+        </EntityType>
+        <EntityType Name="Addresses1">
+          <Key>
+            <PropertyRef Name="addressId" />
+          </Key>
+          <Property Name="addressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="addressStreet" Type="varchar" MaxLength="100" />
+          <Property Name="addressProv" Type="varchar" MaxLength="100" />
+          <Property Name="addressCountry" Type="varchar" MaxLength="100" />
+          <Property Name="postal" Type="varchar" MaxLength="50" />
+          <Property Name="addressDateId" Type="int" />
+          <Property Name="city" Type="varchar" MaxLength="50" />
+          <Property Name="poBox" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Alerts">
+          <Key>
+            <PropertyRef Name="akertId" />
+          </Key>
+          <Property Name="akertId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="alertText" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="timestamp" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="employeeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cafeterias">
+          <Key>
+            <PropertyRef Name="cafeteriaId" />
+          </Key>
+          <Property Name="cafeteriaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="soup" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="breakfast" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="lunch" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="dinner" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Carts">
+          <Key>
+            <PropertyRef Name="CartId" />
+          </Key>
+          <Property Name="CartId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CartSessionId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="GiftId" Type="int" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="Count" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contacts">
+          <Key>
+            <PropertyRef Name="contactId" />
+          </Key>
+          <Property Name="contactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mobileNum" Type="varchar" MaxLength="50" />
+          <Property Name="homeNum" Type="varchar" MaxLength="50" />
+          <Property Name="homeEmail" Type="varchar" MaxLength="100" />
+          <Property Name="workEmail" Type="varchar" MaxLength="100" />
+          <Property Name="pagersNum" Type="varchar" MaxLength="50" />
+          <Property Name="workNum" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CustomerOrders">
+          <Key>
+            <PropertyRef Name="CustomerOrderId" />
+          </Key>
+          <Property Name="CustomerOrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Firstname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Lastname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Province" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Country" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Departments">
+          <Key>
+            <PropertyRef Name="departmentsId" />
+          </Key>
+          <Property Name="departmentsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dptName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dptDesc" Type="varchar(max)" Nullable="false" />
+          <Property Name="symptomsId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DonationHonours">
+          <Key>
+            <PropertyRef Name="donationHonourId" />
+          </Key>
+          <Property Name="donationHonourId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="donorsId" Type="int" />
+          <Property Name="donationsId" Type="int" />
+          <Property Name="honFirstName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="honLastName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="honType" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DonationOccurences">
+          <Key>
+            <PropertyRef Name="donationOccurenceId" />
+          </Key>
+          <Property Name="donationOccurenceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="donationFreq" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DonationProfiles">
+          <Key>
+            <PropertyRef Name="donationProfileId" />
+          </Key>
+          <Property Name="donationProfileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="donationMessage" Type="varchar(max)" Nullable="false" />
+          <Property Name="donationId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Donations">
+          <Key>
+            <PropertyRef Name="donationsId" />
+          </Key>
+          <Property Name="donationsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="donationAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="occurenceId" Type="int" />
+          <Property Name="donationDate" Type="datetime" Nullable="false" />
+          <Property Name="donorsId" Type="int" />
+          <Property Name="donorFN" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="donorLN" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="homeNum" Type="varchar" MaxLength="50" />
+          <Property Name="workNum" Type="varchar" MaxLength="50" />
+          <Property Name="mobileNum" Type="varchar" MaxLength="50" />
+          <Property Name="addressStreet" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="addressProv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="addressCountry" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="postal" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="addressCity" Type="varchar" MaxLength="50" />
+          <Property Name="honorFN" Type="varchar" MaxLength="50" />
+          <Property Name="honorLN" Type="varchar" MaxLength="50" />
+          <Property Name="company" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Donors">
+          <Key>
+            <PropertyRef Name="donorsId" />
+          </Key>
+          <Property Name="donorsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="addressId" Type="int" Nullable="false" />
+          <Property Name="contactId" Type="int" Nullable="false" />
+          <Property Name="donorFirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="donorLastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="company" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="DonorsProfiles">
+          <Key>
+            <PropertyRef Name="donorProfileId" />
+          </Key>
+          <Property Name="donorProfileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="donorsId" Type="int" />
+          <Property Name="donorsMessage" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmerageContacts">
+          <Key>
+            <PropertyRef Name="emerageContactId" />
+          </Key>
+          <Property Name="emerageContactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emergeFirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="emergeLastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="addressId" Type="int" Nullable="false" />
+          <Property Name="emergePhone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="emergeRelationship" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="emergeEmail" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="employeeId" />
+          </Key>
+          <Property Name="employeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="position" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="departmentId" Type="int" Nullable="false" />
+          <Property Name="contactId" Type="int" />
+          <Property Name="addressId" Type="int" />
+          <Property Name="emerageContactID" Type="int" />
+          <Property Name="birthDate" Type="datetime" Nullable="false" />
+          <Property Name="sinNum" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="schedule" Type="varchar(max)" />
+          <Property Name="admin" Type="varchar" MaxLength="50" />
+          <Property Name="employeeStatusId" Type="int" />
+          <Property Name="insuranceId" Type="int" />
+        </EntityType>
+        <EntityType Name="EmployeeSchedule">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Day" Type="varchar" MaxLength="50" />
+          <Property Name="StartTime" Type="time" Precision="7" />
+          <Property Name="BreakTimeBegin" Type="time" Precision="7" />
+          <Property Name="BreakTimeend" Type="time" Precision="7" />
+          <Property Name="EndTime" Type="time" Precision="7" />
+          <Property Name="EmployeeId" Type="int" />
+          <Property Name="EmployeeFirstName" Type="varchar" MaxLength="50" />
+          <Property Name="EmployeeLastName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EmployeeStatus">
+          <Key>
+            <PropertyRef Name="employeeStatusId" />
+          </Key>
+          <Property Name="employeeStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Faq">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="question" Type="varchar(max)" Nullable="false" />
+          <Property Name="answer" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PetaByte.dbo.Feedbacks' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Feedbacks">
+          <Key>
+            <PropertyRef Name="feedbackId" />
+            <PropertyRef Name="firstName" />
+            <PropertyRef Name="lastName" />
+            <PropertyRef Name="email" />
+            <PropertyRef Name="subject" />
+            <PropertyRef Name="feedback" />
+          </Key>
+          <Property Name="feedbackId" Type="int" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="subject" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="feedback" Type="varchar(max)" Nullable="false" />
+          <Property Name="timestamp" Type="datetime" />
+        </EntityType>
+        <EntityType Name="GetHelps">
+          <Key>
+            <PropertyRef Name="getHelpId" />
+          </Key>
+          <Property Name="getHelpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="gender" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="city" Type="varchar" MaxLength="100" />
+          <Property Name="postalcode" Type="varchar" MaxLength="50" />
+          <Property Name="province" Type="varchar" MaxLength="50" />
+          <Property Name="symptoms" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GiftItem">
+          <Key>
+            <PropertyRef Name="GiftItemId" />
+          </Key>
+          <Property Name="GiftItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" />
+          <Property Name="GiftTypeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GiftType">
+          <Key>
+            <PropertyRef Name="GiftTypeId" />
+          </Key>
+          <Property Name="GiftTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HospitalEvents">
+          <Key>
+            <PropertyRef Name="eventsId" />
+          </Key>
+          <Property Name="eventsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="evntName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="evntDesc" Type="varchar(max)" Nullable="false" />
+          <Property Name="evntLoc" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="evntDate" Type="date" Nullable="false" />
+          <Property Name="evntTimebg" Type="time" Precision="7" Nullable="false" />
+          <Property Name="evntTimefn" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Insurances">
+          <Key>
+            <PropertyRef Name="insuranceId" />
+          </Key>
+          <Property Name="insuranceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="insuranceProiver" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="policyNum" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JobApplicants">
+          <Key>
+            <PropertyRef Name="jobAppId" />
+          </Key>
+          <Property Name="jobAppId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="jobId" Type="int" Nullable="false" />
+          <Property Name="appJobTitle" Type="varchar" MaxLength="50" />
+          <Property Name="appFirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="appLastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="appEmail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="appLinkedIn" Type="varchar" MaxLength="50" />
+          <Property Name="appMessage" Type="varchar(max)" />
+          <Property Name="appCv" Type="varchar" MaxLength="200" />
+          <Property Name="appOtherFile" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="JobPostings">
+          <Key>
+            <PropertyRef Name="jobId" />
+          </Key>
+          <Property Name="jobId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="jobTitle" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="jobDesc" Type="varchar(max)" Nullable="false" />
+          <Property Name="employeeId" Type="int" Nullable="false" />
+          <Property Name="timestamp" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Navigations">
+          <Key>
+            <PropertyRef Name="navId" />
+          </Key>
+          <Property Name="navId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="navTitle" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="navUrl" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="employeeId" Type="int" />
+        </EntityType>
+        <EntityType Name="OnCalls">
+          <Key>
+            <PropertyRef Name="onCallId" />
+          </Key>
+          <Property Name="onCallId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="employeeId" Type="int" />
+          <Property Name="startTime" Type="datetime" Nullable="false" />
+          <Property Name="endTime" Type="datetime" Nullable="false" />
+          <Property Name="volunteerId" Type="int" />
+        </EntityType>
+        <EntityType Name="OrderPlaced">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PetaByte.dbo.OrderPlaceds' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="OrderPlaceds">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="OrderId" />
+            <PropertyRef Name="Quantity" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pages">
+          <Key>
+            <PropertyRef Name="pageId" />
+          </Key>
+          <Property Name="pageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pageTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="pageContent" Type="varchar(max)" Nullable="false" />
+          <Property Name="timestamp" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="employeeId" Type="int" Nullable="false" />
+          <Property Name="pageUrl" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Passwords">
+          <Key>
+            <PropertyRef Name="loginId" />
+          </Key>
+          <Property Name="loginId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="password1" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="passwordReset" Type="varchar" MaxLength="75" />
+        </EntityType>
+        <EntityType Name="Patients">
+          <Key>
+            <PropertyRef Name="patientId" />
+          </Key>
+          <Property Name="patientId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="middleName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DOB" Type="datetime" />
+          <Property Name="gender" Type="varchar" MaxLength="50" />
+          <Property Name="physican" Type="varchar" MaxLength="100" />
+          <Property Name="joinDate" Type="datetime" />
+          <Property Name="contactId" Type="int" />
+          <Property Name="addressId" Type="int" />
+          <Property Name="healthCardNum" Type="varchar" MaxLength="50" />
+          <Property Name="emerageContactID" Type="int" />
+          <Property Name="insuranceId" Type="int" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="Allergies" Type="varchar" MaxLength="50" />
+          <Property Name="relationship" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="50" />
+          <Property Name="postal" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PatientsRooms">
+          <Key>
+            <PropertyRef Name="roomId" />
+          </Key>
+          <Property Name="roomId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="patientId" Type="int" Nullable="false" />
+          <Property Name="entryDate" Type="datetime" Nullable="false" />
+          <Property Name="exitDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Positions">
+          <Key>
+            <PropertyRef Name="roleId" />
+          </Key>
+          <Property Name="roleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="roleDescription" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Requests">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="PurposeOfVisit" Type="varchar(max)" />
+          <Property Name="HealthCardNum" Type="varchar" MaxLength="500" />
+          <Property Name="PatientFirstName" Type="varchar" MaxLength="50" />
+          <Property Name="PatientLastName" Type="varchar" MaxLength="50" />
+          <Property Name="PatientId" Type="int" />
+          <Property Name="PhysicianName" Type="varchar(max)" />
+          <Property Name="EmployeeId" Type="int" />
+          <Property Name="DateofAppointment" Type="datetime" />
+          <Property Name="PreferredAppTime" Type="time" Precision="7" />
+          <Property Name="PreferredDate" Type="datetime" />
+          <Property Name="DateofRequest" Type="datetime" />
+          <Property Name="DateApproved" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SubNavigations">
+          <Key>
+            <PropertyRef Name="subNavId" />
+          </Key>
+          <Property Name="subNavId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="navId" Type="int" Nullable="false" />
+          <Property Name="subNavTitle" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="subNavUrl" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="employeeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Symptoms">
+          <Key>
+            <PropertyRef Name="symptomsId" />
+          </Key>
+          <Property Name="symptomsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="symptName" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tickets">
+          <Key>
+            <PropertyRef Name="ticketId" />
+          </Key>
+          <Property Name="ticketId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="employeeId" Type="int" />
+          <Property Name="ticketStatu" Type="varchar" MaxLength="50" />
+          <Property Name="getHelpId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="joinDate" Type="datetime" Nullable="false" />
+          <Property Name="roleId" Type="int" Nullable="false" />
+          <Property Name="loginId" Type="int" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VolunteerApplicants">
+          <Key>
+            <PropertyRef Name="volunteerApplicantsId" />
+          </Key>
+          <Property Name="volunteerApplicantsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="country" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="postal" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="birthDate" Type="datetime" Nullable="false" />
+          <Property Name="startingDate" Type="datetime" Nullable="false" />
+          <Property Name="endDate" Type="datetime" />
+          <Property Name="available" Type="varchar(max)" Nullable="false" />
+          <Property Name="decision" Type="varchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Volunteers">
+          <Key>
+            <PropertyRef Name="volunteerId" />
+          </Key>
+          <Property Name="volunteerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="position" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="departmentId" Type="int" Nullable="false" />
+          <Property Name="contactId" Type="int" />
+          <Property Name="addressId" Type="int" />
+          <Property Name="emerageContactID" Type="int" />
+          <Property Name="birthDate" Type="datetime" Nullable="false" />
+          <Property Name="schedule" Type="varchar(max)" />
+          <Property Name="tasks" Type="varchar(max)" />
+          <Property Name="onCall" Type="tinyint" Nullable="false" />
+          <Property Name="insuranceId" Type="int" />
+        </EntityType>
+        <EntityType Name="WhatToBrings">
+          <Key>
+            <PropertyRef Name="whatToBringId" />
+          </Key>
+          <Property Name="whatToBringId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="itemName" Type="varchar" MaxLength="50" />
+          <Property Name="departmentsId" Type="int" />
+          <Property Name="departmentName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Addresses_AddressDates">
+          <End Role="AddressDates" Type="Self.AddressDates" Multiplicity="0..1" />
+          <End Role="Addresses1" Type="Self.Addresses1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressDates">
+              <PropertyRef Name="addressDateId" />
+            </Principal>
+            <Dependent Role="Addresses1">
+              <PropertyRef Name="addressDateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alerts_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Alerts" Type="Self.Alerts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="Alerts">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cart_GiftId">
+          <End Role="GiftItem" Type="Self.GiftItem" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Carts" Type="Self.Carts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GiftItem">
+              <PropertyRef Name="GiftItemId" />
+            </Principal>
+            <Dependent Role="Carts">
+              <PropertyRef Name="GiftId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departments_Symptoms">
+          <End Role="Symptoms" Type="Self.Symptoms" Multiplicity="1" />
+          <End Role="Departments" Type="Self.Departments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Symptoms">
+              <PropertyRef Name="symptomsId" />
+            </Principal>
+            <Dependent Role="Departments">
+              <PropertyRef Name="symptomsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonationHonours_Donations">
+          <End Role="Donations" Type="Self.Donations" Multiplicity="0..1" />
+          <End Role="DonationHonours" Type="Self.DonationHonours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donations">
+              <PropertyRef Name="donationsId" />
+            </Principal>
+            <Dependent Role="DonationHonours">
+              <PropertyRef Name="donationsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonationHonours_Donors">
+          <End Role="Donors" Type="Self.Donors" Multiplicity="0..1" />
+          <End Role="DonationHonours" Type="Self.DonationHonours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donors">
+              <PropertyRef Name="donorsId" />
+            </Principal>
+            <Dependent Role="DonationHonours">
+              <PropertyRef Name="donorsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_donationProfiles_donationId">
+          <End Role="Donations" Type="Self.Donations" Multiplicity="1" />
+          <End Role="DonationProfiles" Type="Self.DonationProfiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donations">
+              <PropertyRef Name="donationsId" />
+            </Principal>
+            <Dependent Role="DonationProfiles">
+              <PropertyRef Name="donationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donations_DonationOccurence">
+          <End Role="DonationOccurences" Type="Self.DonationOccurences" Multiplicity="0..1" />
+          <End Role="Donations" Type="Self.Donations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DonationOccurences">
+              <PropertyRef Name="donationOccurenceId" />
+            </Principal>
+            <Dependent Role="Donations">
+              <PropertyRef Name="occurenceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donations_Donors">
+          <End Role="Donors" Type="Self.Donors" Multiplicity="0..1" />
+          <End Role="Donations" Type="Self.Donations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donors">
+              <PropertyRef Name="donorsId" />
+            </Principal>
+            <Dependent Role="Donations">
+              <PropertyRef Name="donorsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonorsProfiles_Donors">
+          <End Role="Donors" Type="Self.Donors" Multiplicity="0..1" />
+          <End Role="DonorsProfiles" Type="Self.DonorsProfiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donors">
+              <PropertyRef Name="donorsId" />
+            </Principal>
+            <Dependent Role="DonorsProfiles">
+              <PropertyRef Name="donorsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Addresses">
+          <End Role="Addresses1" Type="Self.Addresses1" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses1">
+              <PropertyRef Name="addressId" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="addressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Contact">
+          <End Role="Contacts" Type="Self.Contacts" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="contactId" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="contactId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_EmerageContacts">
+          <End Role="EmerageContacts" Type="Self.EmerageContacts" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmerageContacts">
+              <PropertyRef Name="emerageContactId" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="emerageContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_EmployeeStatus">
+          <End Role="EmployeeStatus" Type="Self.EmployeeStatus" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeStatus">
+              <PropertyRef Name="employeeStatusId" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="employeeStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Insurance">
+          <End Role="Insurances" Type="Self.Insurances" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insurances">
+              <PropertyRef Name="insuranceId" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="insuranceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeSchedule_Employeeid">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="EmployeeSchedule" Type="Self.EmployeeSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="EmployeeSchedule">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GiftItem_GiftTypeId">
+          <End Role="GiftType" Type="Self.GiftType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GiftItem" Type="Self.GiftItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GiftType">
+              <PropertyRef Name="GiftTypeId" />
+            </Principal>
+            <Dependent Role="GiftItem">
+              <PropertyRef Name="GiftTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobApplicants_JobPostings">
+          <End Role="JobPostings" Type="Self.JobPostings" Multiplicity="1" />
+          <End Role="JobApplicants" Type="Self.JobApplicants" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobPostings">
+              <PropertyRef Name="jobId" />
+            </Principal>
+            <Dependent Role="JobApplicants">
+              <PropertyRef Name="jobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobPostings_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="JobPostings" Type="Self.JobPostings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="JobPostings">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Navigation_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="Navigations" Type="Self.Navigations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="Navigations">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OnCall_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="OnCalls" Type="Self.OnCalls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="OnCalls">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OnCall_Volunteers">
+          <End Role="Volunteers" Type="Self.Volunteers" Multiplicity="0..1" />
+          <End Role="OnCalls" Type="Self.OnCalls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteers">
+              <PropertyRef Name="volunteerId" />
+            </Principal>
+            <Dependent Role="OnCalls">
+              <PropertyRef Name="volunteerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderPlaced_OrderId">
+          <End Role="CustomerOrders" Type="Self.CustomerOrders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderPlaced" Type="Self.OrderPlaced" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerOrders">
+              <PropertyRef Name="CustomerOrderId" />
+            </Principal>
+            <Dependent Role="OrderPlaced">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderPlaced_ProductId">
+          <End Role="GiftItem" Type="Self.GiftItem" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderPlaceds" Type="Self.OrderPlaceds" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GiftItem">
+              <PropertyRef Name="GiftItemId" />
+            </Principal>
+            <Dependent Role="OrderPlaceds">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pages_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Pages" Type="Self.Pages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="Pages">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patients_Addresses">
+          <End Role="Addresses1" Type="Self.Addresses1" Multiplicity="0..1" />
+          <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses1">
+              <PropertyRef Name="addressId" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="addressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patients_Contact">
+          <End Role="Contacts" Type="Self.Contacts" Multiplicity="0..1" />
+          <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="contactId" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="contactId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patients_EmerageContacts">
+          <End Role="EmerageContacts" Type="Self.EmerageContacts" Multiplicity="0..1" />
+          <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmerageContacts">
+              <PropertyRef Name="emerageContactId" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="emerageContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patients_Insurance">
+          <End Role="Insurances" Type="Self.Insurances" Multiplicity="0..1" />
+          <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insurances">
+              <PropertyRef Name="insuranceId" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="insuranceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientsRooms_Patients">
+          <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+          <End Role="PatientsRooms" Type="Self.PatientsRooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="patientId" />
+            </Principal>
+            <Dependent Role="PatientsRooms">
+              <PropertyRef Name="patientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Requests_employeeId">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="Requests">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Requests_patientId">
+          <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+          <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="patientId" />
+            </Principal>
+            <Dependent Role="Requests">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubNavigation_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="SubNavigations" Type="Self.SubNavigations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="SubNavigations">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubNavigation_Navigation">
+          <End Role="Navigations" Type="Self.Navigations" Multiplicity="1" />
+          <End Role="SubNavigations" Type="Self.SubNavigations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Navigations">
+              <PropertyRef Name="navId" />
+            </Principal>
+            <Dependent Role="SubNavigations">
+              <PropertyRef Name="navId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="Tickets" Type="Self.Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="Tickets">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_getHelpId">
+          <End Role="GetHelps" Type="Self.GetHelps" Multiplicity="1" />
+          <End Role="Tickets" Type="Self.Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GetHelps">
+              <PropertyRef Name="getHelpId" />
+            </Principal>
+            <Dependent Role="Tickets">
+              <PropertyRef Name="getHelpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Passwords">
+          <End Role="Passwords" Type="Self.Passwords" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Passwords">
+              <PropertyRef Name="loginId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="loginId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Positions">
+          <End Role="Positions" Type="Self.Positions" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Positions">
+              <PropertyRef Name="roleId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="roleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Volunteers_Addresses">
+          <End Role="Addresses1" Type="Self.Addresses1" Multiplicity="0..1" />
+          <End Role="Volunteers" Type="Self.Volunteers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses1">
+              <PropertyRef Name="addressId" />
+            </Principal>
+            <Dependent Role="Volunteers">
+              <PropertyRef Name="addressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Volunteers_Contact">
+          <End Role="Contacts" Type="Self.Contacts" Multiplicity="0..1" />
+          <End Role="Volunteers" Type="Self.Volunteers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="contactId" />
+            </Principal>
+            <Dependent Role="Volunteers">
+              <PropertyRef Name="contactId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Volunteers_EmerageContacts">
+          <End Role="EmerageContacts" Type="Self.EmerageContacts" Multiplicity="0..1" />
+          <End Role="Volunteers" Type="Self.Volunteers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmerageContacts">
+              <PropertyRef Name="emerageContactId" />
+            </Principal>
+            <Dependent Role="Volunteers">
+              <PropertyRef Name="emerageContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Volunteers_Insurance">
+          <End Role="Insurances" Type="Self.Insurances" Multiplicity="0..1" />
+          <End Role="Volunteers" Type="Self.Volunteers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insurances">
+              <PropertyRef Name="insuranceId" />
+            </Principal>
+            <Dependent Role="Volunteers">
+              <PropertyRef Name="insuranceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WhatToBring_Departments">
+          <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+          <End Role="WhatToBrings" Type="Self.WhatToBrings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="departmentsId" />
+            </Principal>
+            <Dependent Role="WhatToBrings">
+              <PropertyRef Name="departmentsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PetaByteModelStoreContainer">
+          <EntitySet Name="AddressDates" EntityType="Self.AddressDates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Addresses" EntityType="Self.Addresses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Addresses1" EntityType="Self.Addresses1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Alerts" EntityType="Self.Alerts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cafeterias" EntityType="Self.Cafeterias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Carts" EntityType="Self.Carts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contacts" EntityType="Self.Contacts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerOrders" EntityType="Self.CustomerOrders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DonationHonours" EntityType="Self.DonationHonours" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DonationOccurences" EntityType="Self.DonationOccurences" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DonationProfiles" EntityType="Self.DonationProfiles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Donations" EntityType="Self.Donations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Donors" EntityType="Self.Donors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DonorsProfiles" EntityType="Self.DonorsProfiles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmerageContacts" EntityType="Self.EmerageContacts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeSchedule" EntityType="Self.EmployeeSchedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeStatus" EntityType="Self.EmployeeStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Faq" EntityType="Self.Faq" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GetHelps" EntityType="Self.GetHelps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GiftItem" EntityType="Self.GiftItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GiftType" EntityType="Self.GiftType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HospitalEvents" EntityType="Self.HospitalEvents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Insurances" EntityType="Self.Insurances" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobApplicants" EntityType="Self.JobApplicants" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobPostings" EntityType="Self.JobPostings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Navigations" EntityType="Self.Navigations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OnCalls" EntityType="Self.OnCalls" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderPlaced" EntityType="Self.OrderPlaced" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pages" EntityType="Self.Pages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Passwords" EntityType="Self.Passwords" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientsRooms" EntityType="Self.PatientsRooms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Positions" EntityType="Self.Positions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubNavigations" EntityType="Self.SubNavigations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Symptoms" EntityType="Self.Symptoms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tickets" EntityType="Self.Tickets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VolunteerApplicants" EntityType="Self.VolunteerApplicants" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Volunteers" EntityType="Self.Volunteers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WhatToBrings" EntityType="Self.WhatToBrings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Feedbacks" EntityType="Self.Feedbacks" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Feedbacks].[feedbackId] AS [feedbackId], 
+    [Feedbacks].[firstName] AS [firstName], 
+    [Feedbacks].[lastName] AS [lastName], 
+    [Feedbacks].[email] AS [email], 
+    [Feedbacks].[subject] AS [subject], 
+    [Feedbacks].[feedback] AS [feedback], 
+    [Feedbacks].[timestamp] AS [timestamp]
+    FROM [dbo].[Feedbacks] AS [Feedbacks]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OrderPlaceds" EntityType="Self.OrderPlaceds" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OrderPlaceds].[ProductId] AS [ProductId], 
+    [OrderPlaceds].[OrderId] AS [OrderId], 
+    [OrderPlaceds].[Quantity] AS [Quantity]
+    FROM [dbo].[OrderPlaceds] AS [OrderPlaceds]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Requests" EntityType="Self.Requests" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Requests].[id] AS [id], 
+    [Requests].[Status] AS [Status], 
+    [Requests].[PurposeOfVisit] AS [PurposeOfVisit], 
+    [Requests].[HealthCardNum] AS [HealthCardNum], 
+    [Requests].[PatientFirstName] AS [PatientFirstName], 
+    [Requests].[PatientLastName] AS [PatientLastName], 
+    [Requests].[PatientId] AS [PatientId], 
+    [Requests].[PhysicianName] AS [PhysicianName], 
+    [Requests].[EmployeeId] AS [EmployeeId], 
+    [Requests].[DateofAppointment] AS [DateofAppointment], 
+    [Requests].[PreferredAppTime] AS [PreferredAppTime], 
+    [Requests].[PreferredDate] AS [PreferredDate], 
+    [Requests].[DateofRequest] AS [DateofRequest], 
+    [Requests].[DateApproved] AS [DateApproved]
+    FROM [dbo].[Requests] AS [Requests]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Addresses_AddressDates" Association="Self.FK_Addresses_AddressDates">
+            <End Role="AddressDates" EntitySet="AddressDates" />
+            <End Role="Addresses1" EntitySet="Addresses1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alerts_Employees" Association="Self.FK_Alerts_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Alerts" EntitySet="Alerts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cart_GiftId" Association="Self.FK_Cart_GiftId">
+            <End Role="GiftItem" EntitySet="GiftItem" />
+            <End Role="Carts" EntitySet="Carts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departments_Symptoms" Association="Self.FK_Departments_Symptoms">
+            <End Role="Symptoms" EntitySet="Symptoms" />
+            <End Role="Departments" EntitySet="Departments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonationHonours_Donations" Association="Self.FK_DonationHonours_Donations">
+            <End Role="Donations" EntitySet="Donations" />
+            <End Role="DonationHonours" EntitySet="DonationHonours" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonationHonours_Donors" Association="Self.FK_DonationHonours_Donors">
+            <End Role="Donors" EntitySet="Donors" />
+            <End Role="DonationHonours" EntitySet="DonationHonours" />
+          </AssociationSet>
+          <AssociationSet Name="FK_donationProfiles_donationId" Association="Self.FK_donationProfiles_donationId">
+            <End Role="Donations" EntitySet="Donations" />
+            <End Role="DonationProfiles" EntitySet="DonationProfiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donations_DonationOccurence" Association="Self.FK_Donations_DonationOccurence">
+            <End Role="DonationOccurences" EntitySet="DonationOccurences" />
+            <End Role="Donations" EntitySet="Donations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donations_Donors" Association="Self.FK_Donations_Donors">
+            <End Role="Donors" EntitySet="Donors" />
+            <End Role="Donations" EntitySet="Donations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorsProfiles_Donors" Association="Self.FK_DonorsProfiles_Donors">
+            <End Role="Donors" EntitySet="Donors" />
+            <End Role="DonorsProfiles" EntitySet="DonorsProfiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Addresses" Association="Self.FK_Employees_Addresses">
+            <End Role="Addresses1" EntitySet="Addresses1" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Contact" Association="Self.FK_Employees_Contact">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_EmerageContacts" Association="Self.FK_Employees_EmerageContacts">
+            <End Role="EmerageContacts" EntitySet="EmerageContacts" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_EmployeeStatus" Association="Self.FK_Employees_EmployeeStatus">
+            <End Role="EmployeeStatus" EntitySet="EmployeeStatus" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Insurance" Association="Self.FK_Employees_Insurance">
+            <End Role="Insurances" EntitySet="Insurances" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeSchedule_Employeeid" Association="Self.FK_EmployeeSchedule_Employeeid">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="EmployeeSchedule" EntitySet="EmployeeSchedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GiftItem_GiftTypeId" Association="Self.FK_GiftItem_GiftTypeId">
+            <End Role="GiftType" EntitySet="GiftType" />
+            <End Role="GiftItem" EntitySet="GiftItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobApplicants_JobPostings" Association="Self.FK_JobApplicants_JobPostings">
+            <End Role="JobPostings" EntitySet="JobPostings" />
+            <End Role="JobApplicants" EntitySet="JobApplicants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobPostings_Employees" Association="Self.FK_JobPostings_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="JobPostings" EntitySet="JobPostings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Navigation_Employees" Association="Self.FK_Navigation_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Navigations" EntitySet="Navigations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OnCall_Employees" Association="Self.FK_OnCall_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="OnCalls" EntitySet="OnCalls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OnCall_Volunteers" Association="Self.FK_OnCall_Volunteers">
+            <End Role="Volunteers" EntitySet="Volunteers" />
+            <End Role="OnCalls" EntitySet="OnCalls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderPlaced_OrderId" Association="Self.FK_OrderPlaced_OrderId">
+            <End Role="CustomerOrders" EntitySet="CustomerOrders" />
+            <End Role="OrderPlaced" EntitySet="OrderPlaced" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderPlaced_ProductId" Association="Self.FK_OrderPlaced_ProductId">
+            <End Role="GiftItem" EntitySet="GiftItem" />
+            <End Role="OrderPlaceds" EntitySet="OrderPlaceds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pages_Employees" Association="Self.FK_Pages_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Pages" EntitySet="Pages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patients_Addresses" Association="Self.FK_Patients_Addresses">
+            <End Role="Addresses1" EntitySet="Addresses1" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patients_Contact" Association="Self.FK_Patients_Contact">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patients_EmerageContacts" Association="Self.FK_Patients_EmerageContacts">
+            <End Role="EmerageContacts" EntitySet="EmerageContacts" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patients_Insurance" Association="Self.FK_Patients_Insurance">
+            <End Role="Insurances" EntitySet="Insurances" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientsRooms_Patients" Association="Self.FK_PatientsRooms_Patients">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="PatientsRooms" EntitySet="PatientsRooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Requests_employeeId" Association="Self.FK_Requests_employeeId">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Requests" EntitySet="Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Requests_patientId" Association="Self.FK_Requests_patientId">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Requests" EntitySet="Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubNavigation_Employees" Association="Self.FK_SubNavigation_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="SubNavigations" EntitySet="SubNavigations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubNavigation_Navigation" Association="Self.FK_SubNavigation_Navigation">
+            <End Role="Navigations" EntitySet="Navigations" />
+            <End Role="SubNavigations" EntitySet="SubNavigations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Employees" Association="Self.FK_Ticket_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Tickets" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_getHelpId" Association="Self.FK_Ticket_getHelpId">
+            <End Role="GetHelps" EntitySet="GetHelps" />
+            <End Role="Tickets" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Passwords" Association="Self.FK_Users_Passwords">
+            <End Role="Passwords" EntitySet="Passwords" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Positions" Association="Self.FK_Users_Positions">
+            <End Role="Positions" EntitySet="Positions" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Volunteers_Addresses" Association="Self.FK_Volunteers_Addresses">
+            <End Role="Addresses1" EntitySet="Addresses1" />
+            <End Role="Volunteers" EntitySet="Volunteers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Volunteers_Contact" Association="Self.FK_Volunteers_Contact">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="Volunteers" EntitySet="Volunteers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Volunteers_EmerageContacts" Association="Self.FK_Volunteers_EmerageContacts">
+            <End Role="EmerageContacts" EntitySet="EmerageContacts" />
+            <End Role="Volunteers" EntitySet="Volunteers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Volunteers_Insurance" Association="Self.FK_Volunteers_Insurance">
+            <End Role="Insurances" EntitySet="Insurances" />
+            <End Role="Volunteers" EntitySet="Volunteers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WhatToBring_Departments" Association="Self.FK_WhatToBring_Departments">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="WhatToBrings" EntitySet="WhatToBrings" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PetaByteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AddressDate">
+          <Key>
+            <PropertyRef Name="addressDateId" />
+          </Key>
+          <Property Name="addressDateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="addressDateFrom" Type="DateTime" Precision="3" />
+          <Property Name="addressDateTo" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Addresses1" Relationship="Self.FK_Addresses_AddressDates" FromRole="AddressDates" ToRole="Addresses1" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="addressId" />
+          </Key>
+          <Property Name="addressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="addressStreet" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="addressProv" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="addressCountry" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="postal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="addressDateId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Addresses1">
+          <Key>
+            <PropertyRef Name="addressId" />
+          </Key>
+          <Property Name="addressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="addressStreet" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="addressProv" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="addressCountry" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="postal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="addressDateId" Type="Int32" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="poBox" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AddressDate" Relationship="Self.FK_Addresses_AddressDates" FromRole="Addresses1" ToRole="AddressDates" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Addresses" FromRole="Addresses1" ToRole="Employees" />
+          <NavigationProperty Name="Patients" Relationship="Self.FK_Patients_Addresses" FromRole="Addresses1" ToRole="Patients" />
+          <NavigationProperty Name="Volunteers" Relationship="Self.FK_Volunteers_Addresses" FromRole="Addresses1" ToRole="Volunteers" />
+        </EntityType>
+        <EntityType Name="Alert">
+          <Key>
+            <PropertyRef Name="akertId" />
+          </Key>
+          <Property Name="akertId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="alertText" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="timestamp" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="employeeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Alerts_Employees" FromRole="Alerts" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Cafeteria">
+          <Key>
+            <PropertyRef Name="cafeteriaId" />
+          </Key>
+          <Property Name="cafeteriaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="soup" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="breakfast" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lunch" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dinner" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="CartId" />
+          </Key>
+          <Property Name="CartId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CartSessionId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GiftId" Type="Int32" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GiftItem" Relationship="Self.FK_Cart_GiftId" FromRole="Carts" ToRole="GiftItem" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="contactId" />
+          </Key>
+          <Property Name="contactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mobileNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="homeNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="homeEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="workEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="pagersNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="workNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Contact" FromRole="Contacts" ToRole="Employees" />
+          <NavigationProperty Name="Patients" Relationship="Self.FK_Patients_Contact" FromRole="Contacts" ToRole="Patients" />
+          <NavigationProperty Name="Volunteers" Relationship="Self.FK_Volunteers_Contact" FromRole="Contacts" ToRole="Volunteers" />
+        </EntityType>
+        <EntityType Name="CustomerOrder">
+          <Key>
+            <PropertyRef Name="CustomerOrderId" />
+          </Key>
+          <Property Name="CustomerOrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <NavigationProperty Name="OrderPlaceds" Relationship="Self.FK_OrderPlaced_OrderId" FromRole="CustomerOrders" ToRole="OrderPlaced" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="departmentsId" />
+          </Key>
+          <Property Name="departmentsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dptName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dptDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="symptomsId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Symptom" Relationship="Self.FK_Departments_Symptoms" FromRole="Departments" ToRole="Symptoms" />
+          <NavigationProperty Name="WhatToBrings" Relationship="Self.FK_WhatToBring_Departments" FromRole="Departments" ToRole="WhatToBrings" />
+        </EntityType>
+        <EntityType Name="DonationHonour">
+          <Key>
+            <PropertyRef Name="donationHonourId" />
+          </Key>
+          <Property Name="donationHonourId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="donorsId" Type="Int32" />
+          <Property Name="donationsId" Type="Int32" />
+          <Property Name="honFirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="honLastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="honType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Donation" Relationship="Self.FK_DonationHonours_Donations" FromRole="DonationHonours" ToRole="Donations" />
+          <NavigationProperty Name="Donor" Relationship="Self.FK_DonationHonours_Donors" FromRole="DonationHonours" ToRole="Donors" />
+        </EntityType>
+        <EntityType Name="DonationOccurence">
+          <Key>
+            <PropertyRef Name="donationOccurenceId" />
+          </Key>
+          <Property Name="donationOccurenceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="donationFreq" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Donations" Relationship="Self.FK_Donations_DonationOccurence" FromRole="DonationOccurences" ToRole="Donations" />
+        </EntityType>
+        <EntityType Name="DonationProfile">
+          <Key>
+            <PropertyRef Name="donationProfileId" />
+          </Key>
+          <Property Name="donationProfileId" Type="Int32" Nullable="false" />
+          <Property Name="donationMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="donationId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Donation" Relationship="Self.FK_donationProfiles_donationId" FromRole="DonationProfiles" ToRole="Donations" />
+        </EntityType>
+        <EntityType Name="Donation">
+          <Key>
+            <PropertyRef Name="donationsId" />
+          </Key>
+          <Property Name="donationsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="donationAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="occurenceId" Type="Int32" />
+          <Property Name="donationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="donorsId" Type="Int32" />
+          <Property Name="donorFN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="donorLN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="homeNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="workNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mobileNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="addressStreet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="addressProv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="addressCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="postal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="addressCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="honorFN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="honorLN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="company" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DonationHonours" Relationship="Self.FK_DonationHonours_Donations" FromRole="Donations" ToRole="DonationHonours" />
+          <NavigationProperty Name="DonationOccurence" Relationship="Self.FK_Donations_DonationOccurence" FromRole="Donations" ToRole="DonationOccurences" />
+          <NavigationProperty Name="DonationProfiles" Relationship="Self.FK_donationProfiles_donationId" FromRole="Donations" ToRole="DonationProfiles" />
+          <NavigationProperty Name="Donor" Relationship="Self.FK_Donations_Donors" FromRole="Donations" ToRole="Donors" />
+        </EntityType>
+        <EntityType Name="Donor">
+          <Key>
+            <PropertyRef Name="donorsId" />
+          </Key>
+          <Property Name="donorsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="addressId" Type="Int32" Nullable="false" />
+          <Property Name="contactId" Type="Int32" Nullable="false" />
+          <Property Name="donorFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="donorLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="company" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="DonationHonours" Relationship="Self.FK_DonationHonours_Donors" FromRole="Donors" ToRole="DonationHonours" />
+          <NavigationProperty Name="Donations" Relationship="Self.FK_Donations_Donors" FromRole="Donors" ToRole="Donations" />
+          <NavigationProperty Name="DonorsProfiles" Relationship="Self.FK_DonorsProfiles_Donors" FromRole="Donors" ToRole="DonorsProfiles" />
+        </EntityType>
+        <EntityType Name="DonorsProfile">
+          <Key>
+            <PropertyRef Name="donorProfileId" />
+          </Key>
+          <Property Name="donorProfileId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="donorsId" Type="Int32" />
+          <Property Name="donorsMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Donor" Relationship="Self.FK_DonorsProfiles_Donors" FromRole="DonorsProfiles" ToRole="Donors" />
+        </EntityType>
+        <EntityType Name="EmerageContact">
+          <Key>
+            <PropertyRef Name="emerageContactId" />
+          </Key>
+          <Property Name="emerageContactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emergeFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emergeLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="addressId" Type="Int32" Nullable="false" />
+          <Property Name="emergePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emergeRelationship" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emergeEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_EmerageContacts" FromRole="EmerageContacts" ToRole="Employees" />
+          <NavigationProperty Name="Patients" Relationship="Self.FK_Patients_EmerageContacts" FromRole="EmerageContacts" ToRole="Patients" />
+          <NavigationProperty Name="Volunteers" Relationship="Self.FK_Volunteers_EmerageContacts" FromRole="EmerageContacts" ToRole="Volunteers" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="employeeId" />
+          </Key>
+          <Property Name="employeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="position" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="departmentId" Type="Int32" Nullable="false" />
+          <Property Name="contactId" Type="Int32" />
+          <Property Name="addressId" Type="Int32" />
+          <Property Name="emerageContactID" Type="Int32" />
+          <Property Name="birthDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sinNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="schedule" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="employeeStatusId" Type="Int32" />
+          <Property Name="insuranceId" Type="Int32" />
+          <NavigationProperty Name="Addresses1" Relationship="Self.FK_Employees_Addresses" FromRole="Employees" ToRole="Addresses1" />
+          <NavigationProperty Name="Alerts" Relationship="Self.FK_Alerts_Employees" FromRole="Employees" ToRole="Alerts" />
+          <NavigationProperty Name="Contact" Relationship="Self.FK_Employees_Contact" FromRole="Employees" ToRole="Contacts" />
+          <NavigationProperty Name="EmerageContact" Relationship="Self.FK_Employees_EmerageContacts" FromRole="Employees" ToRole="EmerageContacts" />
+          <NavigationProperty Name="EmployeeStatu" Relationship="Self.FK_Employees_EmployeeStatus" FromRole="Employees" ToRole="EmployeeStatus" />
+          <NavigationProperty Name="Insurance" Relationship="Self.FK_Employees_Insurance" FromRole="Employees" ToRole="Insurances" />
+          <NavigationProperty Name="EmployeeSchedules" Relationship="Self.FK_EmployeeSchedule_Employeeid" FromRole="Employees" ToRole="EmployeeSchedule" />
+          <NavigationProperty Name="JobPostings" Relationship="Self.FK_JobPostings_Employees" FromRole="Employees" ToRole="JobPostings" />
+          <NavigationProperty Name="Navigations" Relationship="Self.FK_Navigation_Employees" FromRole="Employees" ToRole="Navigations" />
+          <NavigationProperty Name="OnCalls" Relationship="Self.FK_OnCall_Employees" FromRole="Employees" ToRole="OnCalls" />
+          <NavigationProperty Name="Pages" Relationship="Self.FK_Pages_Employees" FromRole="Employees" ToRole="Pages" />
+          <NavigationProperty Name="Requests" Relationship="Self.FK_Requests_employeeId" FromRole="Employees" ToRole="Requests" />
+          <NavigationProperty Name="SubNavigations" Relationship="Self.FK_SubNavigation_Employees" FromRole="Employees" ToRole="SubNavigations" />
+          <NavigationProperty Name="Tickets" Relationship="Self.FK_Ticket_Employees" FromRole="Employees" ToRole="Tickets" />
+        </EntityType>
+        <EntityType Name="EmployeeSchedule">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Day" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StartTime" Type="Time" Precision="7" />
+          <Property Name="BreakTimeBegin" Type="Time" Precision="7" />
+          <Property Name="BreakTimeend" Type="Time" Precision="7" />
+          <Property Name="EndTime" Type="Time" Precision="7" />
+          <Property Name="EmployeeId" Type="Int32" />
+          <Property Name="EmployeeFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_EmployeeSchedule_Employeeid" FromRole="EmployeeSchedule" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="EmployeeStatu">
+          <Key>
+            <PropertyRef Name="employeeStatusId" />
+          </Key>
+          <Property Name="employeeStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_EmployeeStatus" FromRole="EmployeeStatus" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Faq">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="question" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GetHelp">
+          <Key>
+            <PropertyRef Name="getHelpId" />
+          </Key>
+          <Property Name="getHelpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="city" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="postalcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="symptoms" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tickets" Relationship="Self.FK_Ticket_getHelpId" FromRole="GetHelps" ToRole="Tickets" />
+        </EntityType>
+        <EntityType Name="GiftItem">
+          <Key>
+            <PropertyRef Name="GiftItemId" />
+          </Key>
+          <Property Name="GiftItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastUpdated" Type="DateTime" Precision="3" />
+          <Property Name="GiftTypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Carts" Relationship="Self.FK_Cart_GiftId" FromRole="GiftItem" ToRole="Carts" />
+          <NavigationProperty Name="GiftType" Relationship="Self.FK_GiftItem_GiftTypeId" FromRole="GiftItem" ToRole="GiftType" />
+          <NavigationProperty Name="OrderPlaceds" Relationship="Self.FK_OrderPlaced_ProductId" FromRole="GiftItem" ToRole="OrderPlaceds" />
+        </EntityType>
+        <EntityType Name="GiftType">
+          <Key>
+            <PropertyRef Name="GiftTypeId" />
+          </Key>
+          <Property Name="GiftTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="GiftItems" Relationship="Self.FK_GiftItem_GiftTypeId" FromRole="GiftType" ToRole="GiftItem" />
+        </EntityType>
+        <EntityType Name="HospitalEvent">
+          <Key>
+            <PropertyRef Name="eventsId" />
+          </Key>
+          <Property Name="eventsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="evntName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="evntDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="evntLoc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="evntDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="evntTimebg" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="evntTimefn" Type="Time" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="Insurance">
+          <Key>
+            <PropertyRef Name="insuranceId" />
+          </Key>
+          <Property Name="insuranceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="insuranceProiver" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="policyNum" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Insurance" FromRole="Insurances" ToRole="Employees" />
+          <NavigationProperty Name="Patients" Relationship="Self.FK_Patients_Insurance" FromRole="Insurances" ToRole="Patients" />
+          <NavigationProperty Name="Volunteers" Relationship="Self.FK_Volunteers_Insurance" FromRole="Insurances" ToRole="Volunteers" />
+        </EntityType>
+        <EntityType Name="JobApplicant">
+          <Key>
+            <PropertyRef Name="jobAppId" />
+          </Key>
+          <Property Name="jobAppId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jobId" Type="Int32" Nullable="false" />
+          <Property Name="appJobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="appFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="appLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="appEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="appLinkedIn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="appMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="appCv" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="appOtherFile" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="JobPosting" Relationship="Self.FK_JobApplicants_JobPostings" FromRole="JobApplicants" ToRole="JobPostings" />
+        </EntityType>
+        <EntityType Name="JobPosting">
+          <Key>
+            <PropertyRef Name="jobId" />
+          </Key>
+          <Property Name="jobId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="jobDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="employeeId" Type="Int32" Nullable="false" />
+          <Property Name="timestamp" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_JobPostings_Employees" FromRole="JobPostings" ToRole="Employees" />
+          <NavigationProperty Name="JobApplicants" Relationship="Self.FK_JobApplicants_JobPostings" FromRole="JobPostings" ToRole="JobApplicants" />
+        </EntityType>
+        <EntityType Name="Navigation">
+          <Key>
+            <PropertyRef Name="navId" />
+          </Key>
+          <Property Name="navId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="navTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="navUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="employeeId" Type="Int32" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Navigation_Employees" FromRole="Navigations" ToRole="Employees" />
+          <NavigationProperty Name="SubNavigations" Relationship="Self.FK_SubNavigation_Navigation" FromRole="Navigations" ToRole="SubNavigations" />
+        </EntityType>
+        <EntityType Name="OnCall">
+          <Key>
+            <PropertyRef Name="onCallId" />
+          </Key>
+          <Property Name="onCallId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="employeeId" Type="Int32" />
+          <Property Name="startTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="endTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="volunteerId" Type="Int32" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_OnCall_Employees" FromRole="OnCalls" ToRole="Employees" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK_OnCall_Volunteers" FromRole="OnCalls" ToRole="Volunteers" />
+        </EntityType>
+        <EntityType Name="OrderPlaced">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CustomerOrder" Relationship="Self.FK_OrderPlaced_OrderId" FromRole="OrderPlaced" ToRole="CustomerOrders" />
+        </EntityType>
+        <EntityType Name="Page">
+          <Key>
+            <PropertyRef Name="pageId" />
+          </Key>
+          <Property Name="pageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pageTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pageContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="timestamp" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="employeeId" Type="Int32" Nullable="false" />
+          <Property Name="pageUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Pages_Employees" FromRole="Pages" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Password">
+          <Key>
+            <PropertyRef Name="loginId" />
+          </Key>
+          <Property Name="loginId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="password1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="passwordReset" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Users_Passwords" FromRole="Passwords" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="patientId" />
+          </Key>
+          <Property Name="patientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="middleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Precision="3" />
+          <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="physican" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="joinDate" Type="DateTime" Precision="3" />
+          <Property Name="contactId" Type="Int32" />
+          <Property Name="addressId" Type="Int32" />
+          <Property Name="healthCardNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="emerageContactID" Type="Int32" />
+          <Property Name="insuranceId" Type="Int32" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Allergies" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="relationship" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="postal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Addresses1" Relationship="Self.FK_Patients_Addresses" FromRole="Patients" ToRole="Addresses1" />
+          <NavigationProperty Name="Contact" Relationship="Self.FK_Patients_Contact" FromRole="Patients" ToRole="Contacts" />
+          <NavigationProperty Name="EmerageContact" Relationship="Self.FK_Patients_EmerageContacts" FromRole="Patients" ToRole="EmerageContacts" />
+          <NavigationProperty Name="Insurance" Relationship="Self.FK_Patients_Insurance" FromRole="Patients" ToRole="Insurances" />
+          <NavigationProperty Name="PatientsRooms" Relationship="Self.FK_PatientsRooms_Patients" FromRole="Patients" ToRole="PatientsRooms" />
+          <NavigationProperty Name="Requests" Relationship="Self.FK_Requests_patientId" FromRole="Patients" ToRole="Requests" />
+        </EntityType>
+        <EntityType Name="PatientsRoom">
+          <Key>
+            <PropertyRef Name="roomId" />
+          </Key>
+          <Property Name="roomId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="patientId" Type="Int32" Nullable="false" />
+          <Property Name="entryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="exitDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_PatientsRooms_Patients" FromRole="PatientsRooms" ToRole="Patients" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="roleId" />
+          </Key>
+          <Property Name="roleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="roleDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Users_Positions" FromRole="Positions" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="SubNavigation">
+          <Key>
+            <PropertyRef Name="subNavId" />
+          </Key>
+          <Property Name="subNavId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="navId" Type="Int32" Nullable="false" />
+          <Property Name="subNavTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="subNavUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="employeeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_SubNavigation_Employees" FromRole="SubNavigations" ToRole="Employees" />
+          <NavigationProperty Name="Navigation" Relationship="Self.FK_SubNavigation_Navigation" FromRole="SubNavigations" ToRole="Navigations" />
+        </EntityType>
+        <EntityType Name="Symptom">
+          <Key>
+            <PropertyRef Name="symptomsId" />
+          </Key>
+          <Property Name="symptomsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="symptName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Departments" Relationship="Self.FK_Departments_Symptoms" FromRole="Symptoms" ToRole="Departments" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="ticketId" />
+          </Key>
+          <Property Name="ticketId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="employeeId" Type="Int32" />
+          <Property Name="ticketStatu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="getHelpId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Ticket_Employees" FromRole="Tickets" ToRole="Employees" />
+          <NavigationProperty Name="GetHelp" Relationship="Self.FK_Ticket_getHelpId" FromRole="Tickets" ToRole="GetHelps" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="joinDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="roleId" Type="Int32" Nullable="false" />
+          <Property Name="loginId" Type="Int32" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Password" Relationship="Self.FK_Users_Passwords" FromRole="Users" ToRole="Passwords" />
+          <NavigationProperty Name="Position" Relationship="Self.FK_Users_Positions" FromRole="Users" ToRole="Positions" />
+        </EntityType>
+        <EntityType Name="VolunteerApplicant">
+          <Key>
+            <PropertyRef Name="volunteerApplicantsId" />
+          </Key>
+          <Property Name="volunteerApplicantsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="postal" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="birthDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="startingDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="endDate" Type="DateTime" Precision="3" />
+          <Property Name="available" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="decision" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Volunteer">
+          <Key>
+            <PropertyRef Name="volunteerId" />
+          </Key>
+          <Property Name="volunteerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="position" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="departmentId" Type="Int32" Nullable="false" />
+          <Property Name="contactId" Type="Int32" />
+          <Property Name="addressId" Type="Int32" />
+          <Property Name="emerageContactID" Type="Int32" />
+          <Property Name="birthDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="schedule" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tasks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="onCall" Type="Byte" Nullable="false" />
+          <Property Name="insuranceId" Type="Int32" />
+          <NavigationProperty Name="Addresses1" Relationship="Self.FK_Volunteers_Addresses" FromRole="Volunteers" ToRole="Addresses1" />
+          <NavigationProperty Name="Contact" Relationship="Self.FK_Volunteers_Contact" FromRole="Volunteers" ToRole="Contacts" />
+          <NavigationProperty Name="EmerageContact" Relationship="Self.FK_Volunteers_EmerageContacts" FromRole="Volunteers" ToRole="EmerageContacts" />
+          <NavigationProperty Name="Insurance" Relationship="Self.FK_Volunteers_Insurance" FromRole="Volunteers" ToRole="Insurances" />
+          <NavigationProperty Name="OnCalls" Relationship="Self.FK_OnCall_Volunteers" FromRole="Volunteers" ToRole="OnCalls" />
+        </EntityType>
+        <EntityType Name="WhatToBring">
+          <Key>
+            <PropertyRef Name="whatToBringId" />
+          </Key>
+          <Property Name="whatToBringId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="itemName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="departmentsId" Type="Int32" />
+          <Property Name="departmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_WhatToBring_Departments" FromRole="WhatToBrings" ToRole="Departments" />
+        </EntityType>
+        <EntityType Name="Feedback">
+          <Key>
+            <PropertyRef Name="feedbackId" />
+            <PropertyRef Name="firstName" />
+            <PropertyRef Name="lastName" />
+            <PropertyRef Name="email" />
+            <PropertyRef Name="subject" />
+            <PropertyRef Name="feedback1" />
+          </Key>
+          <Property Name="feedbackId" Type="Int32" Nullable="false" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="subject" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="feedback1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="timestamp" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OrderPlaced1">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="OrderId" />
+            <PropertyRef Name="Quantity" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GiftItem" Relationship="Self.FK_OrderPlaced_ProductId" FromRole="OrderPlaceds" ToRole="GiftItem" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PurposeOfVisit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HealthCardNum" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PatientFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PatientLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PatientId" Type="Int32" />
+          <Property Name="PhysicianName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeId" Type="Int32" />
+          <Property Name="DateofAppointment" Type="DateTime" Precision="3" />
+          <Property Name="PreferredAppTime" Type="Time" Precision="7" />
+          <Property Name="PreferredDate" Type="DateTime" Precision="3" />
+          <Property Name="DateofRequest" Type="DateTime" Precision="3" />
+          <Property Name="DateApproved" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Requests_employeeId" FromRole="Requests" ToRole="Employees" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_Requests_patientId" FromRole="Requests" ToRole="Patients" />
+        </EntityType>
+        <Association Name="FK_Addresses_AddressDates">
+          <End Role="AddressDates" Type="Self.AddressDate" Multiplicity="0..1" />
+          <End Role="Addresses1" Type="Self.Addresses1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressDates">
+              <PropertyRef Name="addressDateId" />
+            </Principal>
+            <Dependent Role="Addresses1">
+              <PropertyRef Name="addressDateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Addresses">
+          <End Role="Addresses1" Type="Self.Addresses1" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses1">
+              <PropertyRef Name="addressId" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="addressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patients_Addresses">
+          <End Role="Addresses1" Type="Self.Addresses1" Multiplicity="0..1" />
+          <End Role="Patients" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses1">
+              <PropertyRef Name="addressId" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="addressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Volunteers_Addresses">
+          <End Role="Addresses1" Type="Self.Addresses1" Multiplicity="0..1" />
+          <End Role="Volunteers" Type="Self.Volunteer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses1">
+              <PropertyRef Name="addressId" />
+            </Principal>
+            <Dependent Role="Volunteers">
+              <PropertyRef Name="addressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Alerts_Employees">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Alerts" Type="Self.Alert" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="Alerts">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cart_GiftId">
+          <End Role="GiftItem" Type="Self.GiftItem" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Carts" Type="Self.Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GiftItem">
+              <PropertyRef Name="GiftItemId" />
+            </Principal>
+            <Dependent Role="Carts">
+              <PropertyRef Name="GiftId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Contact">
+          <End Role="Contacts" Type="Self.Contact" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="contactId" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="contactId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patients_Contact">
+          <End Role="Contacts" Type="Self.Contact" Multiplicity="0..1" />
+          <End Role="Patients" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="contactId" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="contactId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Volunteers_Contact">
+          <End Role="Contacts" Type="Self.Contact" Multiplicity="0..1" />
+          <End Role="Volunteers" Type="Self.Volunteer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="contactId" />
+            </Principal>
+            <Dependent Role="Volunteers">
+              <PropertyRef Name="contactId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderPlaced_OrderId">
+          <End Role="CustomerOrders" Type="Self.CustomerOrder" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderPlaced" Type="Self.OrderPlaced" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerOrders">
+              <PropertyRef Name="CustomerOrderId" />
+            </Principal>
+            <Dependent Role="OrderPlaced">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departments_Symptoms">
+          <End Role="Symptoms" Type="Self.Symptom" Multiplicity="1" />
+          <End Role="Departments" Type="Self.Department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Symptoms">
+              <PropertyRef Name="symptomsId" />
+            </Principal>
+            <Dependent Role="Departments">
+              <PropertyRef Name="symptomsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WhatToBring_Departments">
+          <End Role="Departments" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="WhatToBrings" Type="Self.WhatToBring" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="departmentsId" />
+            </Principal>
+            <Dependent Role="WhatToBrings">
+              <PropertyRef Name="departmentsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonationHonours_Donations">
+          <End Role="Donations" Type="Self.Donation" Multiplicity="0..1" />
+          <End Role="DonationHonours" Type="Self.DonationHonour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donations">
+              <PropertyRef Name="donationsId" />
+            </Principal>
+            <Dependent Role="DonationHonours">
+              <PropertyRef Name="donationsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonationHonours_Donors">
+          <End Role="Donors" Type="Self.Donor" Multiplicity="0..1" />
+          <End Role="DonationHonours" Type="Self.DonationHonour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donors">
+              <PropertyRef Name="donorsId" />
+            </Principal>
+            <Dependent Role="DonationHonours">
+              <PropertyRef Name="donorsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donations_DonationOccurence">
+          <End Role="DonationOccurences" Type="Self.DonationOccurence" Multiplicity="0..1" />
+          <End Role="Donations" Type="Self.Donation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DonationOccurences">
+              <PropertyRef Name="donationOccurenceId" />
+            </Principal>
+            <Dependent Role="Donations">
+              <PropertyRef Name="occurenceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_donationProfiles_donationId">
+          <End Role="Donations" Type="Self.Donation" Multiplicity="1" />
+          <End Role="DonationProfiles" Type="Self.DonationProfile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donations">
+              <PropertyRef Name="donationsId" />
+            </Principal>
+            <Dependent Role="DonationProfiles">
+              <PropertyRef Name="donationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donations_Donors">
+          <End Role="Donors" Type="Self.Donor" Multiplicity="0..1" />
+          <End Role="Donations" Type="Self.Donation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donors">
+              <PropertyRef Name="donorsId" />
+            </Principal>
+            <Dependent Role="Donations">
+              <PropertyRef Name="donorsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonorsProfiles_Donors">
+          <End Role="Donors" Type="Self.Donor" Multiplicity="0..1" />
+          <End Role="DonorsProfiles" Type="Self.DonorsProfile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donors">
+              <PropertyRef Name="donorsId" />
+            </Principal>
+            <Dependent Role="DonorsProfiles">
+              <PropertyRef Name="donorsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_EmerageContacts">
+          <End Role="EmerageContacts" Type="Self.EmerageContact" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmerageContacts">
+              <PropertyRef Name="emerageContactId" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="emerageContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patients_EmerageContacts">
+          <End Role="EmerageContacts" Type="Self.EmerageContact" Multiplicity="0..1" />
+          <End Role="Patients" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmerageContacts">
+              <PropertyRef Name="emerageContactId" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="emerageContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Volunteers_EmerageContacts">
+          <End Role="EmerageContacts" Type="Self.EmerageContact" Multiplicity="0..1" />
+          <End Role="Volunteers" Type="Self.Volunteer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmerageContacts">
+              <PropertyRef Name="emerageContactId" />
+            </Principal>
+            <Dependent Role="Volunteers">
+              <PropertyRef Name="emerageContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_EmployeeStatus">
+          <End Role="EmployeeStatus" Type="Self.EmployeeStatu" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeStatus">
+              <PropertyRef Name="employeeStatusId" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="employeeStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Insurance">
+          <End Role="Insurances" Type="Self.Insurance" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insurances">
+              <PropertyRef Name="insuranceId" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="insuranceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeSchedule_Employeeid">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="EmployeeSchedule" Type="Self.EmployeeSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="EmployeeSchedule">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobPostings_Employees">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+          <End Role="JobPostings" Type="Self.JobPosting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="JobPostings">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Navigation_Employees">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Navigations" Type="Self.Navigation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="Navigations">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OnCall_Employees">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="OnCalls" Type="Self.OnCall" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="OnCalls">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pages_Employees">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Pages" Type="Self.Page" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="Pages">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Requests_employeeId">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Requests" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="Requests">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubNavigation_Employees">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+          <End Role="SubNavigations" Type="Self.SubNavigation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="SubNavigations">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Employees">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Tickets" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="Tickets">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_getHelpId">
+          <End Role="GetHelps" Type="Self.GetHelp" Multiplicity="1" />
+          <End Role="Tickets" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GetHelps">
+              <PropertyRef Name="getHelpId" />
+            </Principal>
+            <Dependent Role="Tickets">
+              <PropertyRef Name="getHelpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GiftItem_GiftTypeId">
+          <End Role="GiftType" Type="Self.GiftType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GiftItem" Type="Self.GiftItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GiftType">
+              <PropertyRef Name="GiftTypeId" />
+            </Principal>
+            <Dependent Role="GiftItem">
+              <PropertyRef Name="GiftTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderPlaced_ProductId">
+          <End Role="GiftItem" Type="Self.GiftItem" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderPlaceds" Type="Self.OrderPlaced1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GiftItem">
+              <PropertyRef Name="GiftItemId" />
+            </Principal>
+            <Dependent Role="OrderPlaceds">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patients_Insurance">
+          <End Role="Insurances" Type="Self.Insurance" Multiplicity="0..1" />
+          <End Role="Patients" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insurances">
+              <PropertyRef Name="insuranceId" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="insuranceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Volunteers_Insurance">
+          <End Role="Insurances" Type="Self.Insurance" Multiplicity="0..1" />
+          <End Role="Volunteers" Type="Self.Volunteer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insurances">
+              <PropertyRef Name="insuranceId" />
+            </Principal>
+            <Dependent Role="Volunteers">
+              <PropertyRef Name="insuranceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobApplicants_JobPostings">
+          <End Role="JobPostings" Type="Self.JobPosting" Multiplicity="1" />
+          <End Role="JobApplicants" Type="Self.JobApplicant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobPostings">
+              <PropertyRef Name="jobId" />
+            </Principal>
+            <Dependent Role="JobApplicants">
+              <PropertyRef Name="jobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubNavigation_Navigation">
+          <End Role="Navigations" Type="Self.Navigation" Multiplicity="1" />
+          <End Role="SubNavigations" Type="Self.SubNavigation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Navigations">
+              <PropertyRef Name="navId" />
+            </Principal>
+            <Dependent Role="SubNavigations">
+              <PropertyRef Name="navId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OnCall_Volunteers">
+          <End Role="Volunteers" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="OnCalls" Type="Self.OnCall" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteers">
+              <PropertyRef Name="volunteerId" />
+            </Principal>
+            <Dependent Role="OnCalls">
+              <PropertyRef Name="volunteerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Passwords">
+          <End Role="Passwords" Type="Self.Password" Multiplicity="1" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Passwords">
+              <PropertyRef Name="loginId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="loginId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientsRooms_Patients">
+          <End Role="Patients" Type="Self.Patient" Multiplicity="1" />
+          <End Role="PatientsRooms" Type="Self.PatientsRoom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="patientId" />
+            </Principal>
+            <Dependent Role="PatientsRooms">
+              <PropertyRef Name="patientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Requests_patientId">
+          <End Role="Patients" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Requests" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="patientId" />
+            </Principal>
+            <Dependent Role="Requests">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Positions">
+          <End Role="Positions" Type="Self.Position" Multiplicity="1" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Positions">
+              <PropertyRef Name="roleId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="roleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PetaByteContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AddressDates" EntityType="Self.AddressDate" />
+          <EntitySet Name="Addresses" EntityType="Self.Address" />
+          <EntitySet Name="Addresses1" EntityType="Self.Addresses1" />
+          <EntitySet Name="Alerts" EntityType="Self.Alert" />
+          <EntitySet Name="Cafeterias" EntityType="Self.Cafeteria" />
+          <EntitySet Name="Carts" EntityType="Self.Cart" />
+          <EntitySet Name="Contacts" EntityType="Self.Contact" />
+          <EntitySet Name="CustomerOrders" EntityType="Self.CustomerOrder" />
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="DonationHonours" EntityType="Self.DonationHonour" />
+          <EntitySet Name="DonationOccurences" EntityType="Self.DonationOccurence" />
+          <EntitySet Name="DonationProfiles" EntityType="Self.DonationProfile" />
+          <EntitySet Name="Donations" EntityType="Self.Donation" />
+          <EntitySet Name="Donors" EntityType="Self.Donor" />
+          <EntitySet Name="DonorsProfiles" EntityType="Self.DonorsProfile" />
+          <EntitySet Name="EmerageContacts" EntityType="Self.EmerageContact" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="EmployeeSchedules" EntityType="Self.EmployeeSchedule" />
+          <EntitySet Name="EmployeeStatus" EntityType="Self.EmployeeStatu" />
+          <EntitySet Name="Faqs" EntityType="Self.Faq" />
+          <EntitySet Name="GetHelps" EntityType="Self.GetHelp" />
+          <EntitySet Name="GiftItems" EntityType="Self.GiftItem" />
+          <EntitySet Name="GiftTypes" EntityType="Self.GiftType" />
+          <EntitySet Name="HospitalEvents" EntityType="Self.HospitalEvent" />
+          <EntitySet Name="Insurances" EntityType="Self.Insurance" />
+          <EntitySet Name="JobApplicants" EntityType="Self.JobApplicant" />
+          <EntitySet Name="JobPostings" EntityType="Self.JobPosting" />
+          <EntitySet Name="Navigations" EntityType="Self.Navigation" />
+          <EntitySet Name="OnCalls" EntityType="Self.OnCall" />
+          <EntitySet Name="OrderPlaceds" EntityType="Self.OrderPlaced" />
+          <EntitySet Name="Pages" EntityType="Self.Page" />
+          <EntitySet Name="Passwords" EntityType="Self.Password" />
+          <EntitySet Name="Patients" EntityType="Self.Patient" />
+          <EntitySet Name="PatientsRooms" EntityType="Self.PatientsRoom" />
+          <EntitySet Name="Positions" EntityType="Self.Position" />
+          <EntitySet Name="SubNavigations" EntityType="Self.SubNavigation" />
+          <EntitySet Name="Symptoms" EntityType="Self.Symptom" />
+          <EntitySet Name="Tickets" EntityType="Self.Ticket" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="VolunteerApplicants" EntityType="Self.VolunteerApplicant" />
+          <EntitySet Name="Volunteers" EntityType="Self.Volunteer" />
+          <EntitySet Name="WhatToBrings" EntityType="Self.WhatToBring" />
+          <EntitySet Name="Feedbacks" EntityType="Self.Feedback" />
+          <EntitySet Name="OrderPlaceds1" EntityType="Self.OrderPlaced1" />
+          <EntitySet Name="Requests" EntityType="Self.Request" />
+          <AssociationSet Name="FK_Addresses_AddressDates" Association="Self.FK_Addresses_AddressDates">
+            <End Role="AddressDates" EntitySet="AddressDates" />
+            <End Role="Addresses1" EntitySet="Addresses1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Addresses" Association="Self.FK_Employees_Addresses">
+            <End Role="Addresses1" EntitySet="Addresses1" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patients_Addresses" Association="Self.FK_Patients_Addresses">
+            <End Role="Addresses1" EntitySet="Addresses1" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Volunteers_Addresses" Association="Self.FK_Volunteers_Addresses">
+            <End Role="Addresses1" EntitySet="Addresses1" />
+            <End Role="Volunteers" EntitySet="Volunteers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Alerts_Employees" Association="Self.FK_Alerts_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Alerts" EntitySet="Alerts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cart_GiftId" Association="Self.FK_Cart_GiftId">
+            <End Role="GiftItem" EntitySet="GiftItems" />
+            <End Role="Carts" EntitySet="Carts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Contact" Association="Self.FK_Employees_Contact">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patients_Contact" Association="Self.FK_Patients_Contact">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Volunteers_Contact" Association="Self.FK_Volunteers_Contact">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="Volunteers" EntitySet="Volunteers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderPlaced_OrderId" Association="Self.FK_OrderPlaced_OrderId">
+            <End Role="CustomerOrders" EntitySet="CustomerOrders" />
+            <End Role="OrderPlaced" EntitySet="OrderPlaceds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departments_Symptoms" Association="Self.FK_Departments_Symptoms">
+            <End Role="Symptoms" EntitySet="Symptoms" />
+            <End Role="Departments" EntitySet="Departments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WhatToBring_Departments" Association="Self.FK_WhatToBring_Departments">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="WhatToBrings" EntitySet="WhatToBrings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonationHonours_Donations" Association="Self.FK_DonationHonours_Donations">
+            <End Role="Donations" EntitySet="Donations" />
+            <End Role="DonationHonours" EntitySet="DonationHonours" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonationHonours_Donors" Association="Self.FK_DonationHonours_Donors">
+            <End Role="Donors" EntitySet="Donors" />
+            <End Role="DonationHonours" EntitySet="DonationHonours" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donations_DonationOccurence" Association="Self.FK_Donations_DonationOccurence">
+            <End Role="DonationOccurences" EntitySet="DonationOccurences" />
+            <End Role="Donations" EntitySet="Donations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_donationProfiles_donationId" Association="Self.FK_donationProfiles_donationId">
+            <End Role="Donations" EntitySet="Donations" />
+            <End Role="DonationProfiles" EntitySet="DonationProfiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donations_Donors" Association="Self.FK_Donations_Donors">
+            <End Role="Donors" EntitySet="Donors" />
+            <End Role="Donations" EntitySet="Donations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorsProfiles_Donors" Association="Self.FK_DonorsProfiles_Donors">
+            <End Role="Donors" EntitySet="Donors" />
+            <End Role="DonorsProfiles" EntitySet="DonorsProfiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_EmerageContacts" Association="Self.FK_Employees_EmerageContacts">
+            <End Role="EmerageContacts" EntitySet="EmerageContacts" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patients_EmerageContacts" Association="Self.FK_Patients_EmerageContacts">
+            <End Role="EmerageContacts" EntitySet="EmerageContacts" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Volunteers_EmerageContacts" Association="Self.FK_Volunteers_EmerageContacts">
+            <End Role="EmerageContacts" EntitySet="EmerageContacts" />
+            <End Role="Volunteers" EntitySet="Volunteers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_EmployeeStatus" Association="Self.FK_Employees_EmployeeStatus">
+            <End Role="EmployeeStatus" EntitySet="EmployeeStatus" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Insurance" Association="Self.FK_Employees_Insurance">
+            <End Role="Insurances" EntitySet="Insurances" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeSchedule_Employeeid" Association="Self.FK_EmployeeSchedule_Employeeid">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="EmployeeSchedule" EntitySet="EmployeeSchedules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobPostings_Employees" Association="Self.FK_JobPostings_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="JobPostings" EntitySet="JobPostings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Navigation_Employees" Association="Self.FK_Navigation_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Navigations" EntitySet="Navigations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OnCall_Employees" Association="Self.FK_OnCall_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="OnCalls" EntitySet="OnCalls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pages_Employees" Association="Self.FK_Pages_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Pages" EntitySet="Pages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Requests_employeeId" Association="Self.FK_Requests_employeeId">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Requests" EntitySet="Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubNavigation_Employees" Association="Self.FK_SubNavigation_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="SubNavigations" EntitySet="SubNavigations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Employees" Association="Self.FK_Ticket_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Tickets" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_getHelpId" Association="Self.FK_Ticket_getHelpId">
+            <End Role="GetHelps" EntitySet="GetHelps" />
+            <End Role="Tickets" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GiftItem_GiftTypeId" Association="Self.FK_GiftItem_GiftTypeId">
+            <End Role="GiftType" EntitySet="GiftTypes" />
+            <End Role="GiftItem" EntitySet="GiftItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderPlaced_ProductId" Association="Self.FK_OrderPlaced_ProductId">
+            <End Role="GiftItem" EntitySet="GiftItems" />
+            <End Role="OrderPlaceds" EntitySet="OrderPlaceds1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patients_Insurance" Association="Self.FK_Patients_Insurance">
+            <End Role="Insurances" EntitySet="Insurances" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Volunteers_Insurance" Association="Self.FK_Volunteers_Insurance">
+            <End Role="Insurances" EntitySet="Insurances" />
+            <End Role="Volunteers" EntitySet="Volunteers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobApplicants_JobPostings" Association="Self.FK_JobApplicants_JobPostings">
+            <End Role="JobPostings" EntitySet="JobPostings" />
+            <End Role="JobApplicants" EntitySet="JobApplicants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubNavigation_Navigation" Association="Self.FK_SubNavigation_Navigation">
+            <End Role="Navigations" EntitySet="Navigations" />
+            <End Role="SubNavigations" EntitySet="SubNavigations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OnCall_Volunteers" Association="Self.FK_OnCall_Volunteers">
+            <End Role="Volunteers" EntitySet="Volunteers" />
+            <End Role="OnCalls" EntitySet="OnCalls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Passwords" Association="Self.FK_Users_Passwords">
+            <End Role="Passwords" EntitySet="Passwords" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientsRooms_Patients" Association="Self.FK_PatientsRooms_Patients">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="PatientsRooms" EntitySet="PatientsRooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Requests_patientId" Association="Self.FK_Requests_patientId">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Requests" EntitySet="Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Positions" Association="Self.FK_Users_Positions">
+            <End Role="Positions" EntitySet="Positions" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PetaByteModelStoreContainer" CdmEntityContainer="PetaByteContext">
+          <EntitySetMapping Name="AddressDates">
+            <EntityTypeMapping TypeName="PetaByteModel.AddressDate">
+              <MappingFragment StoreEntitySet="AddressDates">
+                <ScalarProperty Name="addressDateId" ColumnName="addressDateId" />
+                <ScalarProperty Name="addressDateFrom" ColumnName="addressDateFrom" />
+                <ScalarProperty Name="addressDateTo" ColumnName="addressDateTo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="PetaByteModel.Address">
+              <MappingFragment StoreEntitySet="Addresses">
+                <ScalarProperty Name="addressId" ColumnName="addressId" />
+                <ScalarProperty Name="addressStreet" ColumnName="addressStreet" />
+                <ScalarProperty Name="addressProv" ColumnName="addressProv" />
+                <ScalarProperty Name="addressCountry" ColumnName="addressCountry" />
+                <ScalarProperty Name="postal" ColumnName="postal" />
+                <ScalarProperty Name="addressDateId" ColumnName="addressDateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Addresses1">
+            <EntityTypeMapping TypeName="PetaByteModel.Addresses1">
+              <MappingFragment StoreEntitySet="Addresses1">
+                <ScalarProperty Name="addressId" ColumnName="addressId" />
+                <ScalarProperty Name="addressStreet" ColumnName="addressStreet" />
+                <ScalarProperty Name="addressProv" ColumnName="addressProv" />
+                <ScalarProperty Name="addressCountry" ColumnName="addressCountry" />
+                <ScalarProperty Name="postal" ColumnName="postal" />
+                <ScalarProperty Name="addressDateId" ColumnName="addressDateId" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="poBox" ColumnName="poBox" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Alerts">
+            <EntityTypeMapping TypeName="PetaByteModel.Alert">
+              <MappingFragment StoreEntitySet="Alerts">
+                <ScalarProperty Name="akertId" ColumnName="akertId" />
+                <ScalarProperty Name="alertText" ColumnName="alertText" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cafeterias">
+            <EntityTypeMapping TypeName="PetaByteModel.Cafeteria">
+              <MappingFragment StoreEntitySet="Cafeterias">
+                <ScalarProperty Name="cafeteriaId" ColumnName="cafeteriaId" />
+                <ScalarProperty Name="soup" ColumnName="soup" />
+                <ScalarProperty Name="breakfast" ColumnName="breakfast" />
+                <ScalarProperty Name="lunch" ColumnName="lunch" />
+                <ScalarProperty Name="dinner" ColumnName="dinner" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Carts">
+            <EntityTypeMapping TypeName="PetaByteModel.Cart">
+              <MappingFragment StoreEntitySet="Carts">
+                <ScalarProperty Name="CartId" ColumnName="CartId" />
+                <ScalarProperty Name="CartSessionId" ColumnName="CartSessionId" />
+                <ScalarProperty Name="GiftId" ColumnName="GiftId" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="PetaByteModel.Contact">
+              <MappingFragment StoreEntitySet="Contacts">
+                <ScalarProperty Name="contactId" ColumnName="contactId" />
+                <ScalarProperty Name="mobileNum" ColumnName="mobileNum" />
+                <ScalarProperty Name="homeNum" ColumnName="homeNum" />
+                <ScalarProperty Name="homeEmail" ColumnName="homeEmail" />
+                <ScalarProperty Name="workEmail" ColumnName="workEmail" />
+                <ScalarProperty Name="pagersNum" ColumnName="pagersNum" />
+                <ScalarProperty Name="workNum" ColumnName="workNum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerOrders">
+            <EntityTypeMapping TypeName="PetaByteModel.CustomerOrder">
+              <MappingFragment StoreEntitySet="CustomerOrders">
+                <ScalarProperty Name="CustomerOrderId" ColumnName="CustomerOrderId" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="PetaByteModel.Department">
+              <MappingFragment StoreEntitySet="Departments">
+                <ScalarProperty Name="departmentsId" ColumnName="departmentsId" />
+                <ScalarProperty Name="dptName" ColumnName="dptName" />
+                <ScalarProperty Name="dptDesc" ColumnName="dptDesc" />
+                <ScalarProperty Name="symptomsId" ColumnName="symptomsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DonationHonours">
+            <EntityTypeMapping TypeName="PetaByteModel.DonationHonour">
+              <MappingFragment StoreEntitySet="DonationHonours">
+                <ScalarProperty Name="donationHonourId" ColumnName="donationHonourId" />
+                <ScalarProperty Name="donorsId" ColumnName="donorsId" />
+                <ScalarProperty Name="donationsId" ColumnName="donationsId" />
+                <ScalarProperty Name="honFirstName" ColumnName="honFirstName" />
+                <ScalarProperty Name="honLastName" ColumnName="honLastName" />
+                <ScalarProperty Name="honType" ColumnName="honType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DonationOccurences">
+            <EntityTypeMapping TypeName="PetaByteModel.DonationOccurence">
+              <MappingFragment StoreEntitySet="DonationOccurences">
+                <ScalarProperty Name="donationOccurenceId" ColumnName="donationOccurenceId" />
+                <ScalarProperty Name="donationFreq" ColumnName="donationFreq" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DonationProfiles">
+            <EntityTypeMapping TypeName="PetaByteModel.DonationProfile">
+              <MappingFragment StoreEntitySet="DonationProfiles">
+                <ScalarProperty Name="donationProfileId" ColumnName="donationProfileId" />
+                <ScalarProperty Name="donationMessage" ColumnName="donationMessage" />
+                <ScalarProperty Name="donationId" ColumnName="donationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Donations">
+            <EntityTypeMapping TypeName="PetaByteModel.Donation">
+              <MappingFragment StoreEntitySet="Donations">
+                <ScalarProperty Name="donationsId" ColumnName="donationsId" />
+                <ScalarProperty Name="donationAmount" ColumnName="donationAmount" />
+                <ScalarProperty Name="occurenceId" ColumnName="occurenceId" />
+                <ScalarProperty Name="donationDate" ColumnName="donationDate" />
+                <ScalarProperty Name="donorsId" ColumnName="donorsId" />
+                <ScalarProperty Name="donorFN" ColumnName="donorFN" />
+                <ScalarProperty Name="donorLN" ColumnName="donorLN" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="homeNum" ColumnName="homeNum" />
+                <ScalarProperty Name="workNum" ColumnName="workNum" />
+                <ScalarProperty Name="mobileNum" ColumnName="mobileNum" />
+                <ScalarProperty Name="addressStreet" ColumnName="addressStreet" />
+                <ScalarProperty Name="addressProv" ColumnName="addressProv" />
+                <ScalarProperty Name="addressCountry" ColumnName="addressCountry" />
+                <ScalarProperty Name="postal" ColumnName="postal" />
+                <ScalarProperty Name="addressCity" ColumnName="addressCity" />
+                <ScalarProperty Name="honorFN" ColumnName="honorFN" />
+                <ScalarProperty Name="honorLN" ColumnName="honorLN" />
+                <ScalarProperty Name="company" ColumnName="company" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Donors">
+            <EntityTypeMapping TypeName="PetaByteModel.Donor">
+              <MappingFragment StoreEntitySet="Donors">
+                <ScalarProperty Name="donorsId" ColumnName="donorsId" />
+                <ScalarProperty Name="addressId" ColumnName="addressId" />
+                <ScalarProperty Name="contactId" ColumnName="contactId" />
+                <ScalarProperty Name="donorFirstName" ColumnName="donorFirstName" />
+                <ScalarProperty Name="donorLastName" ColumnName="donorLastName" />
+                <ScalarProperty Name="company" ColumnName="company" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DonorsProfiles">
+            <EntityTypeMapping TypeName="PetaByteModel.DonorsProfile">
+              <MappingFragment StoreEntitySet="DonorsProfiles">
+                <ScalarProperty Name="donorProfileId" ColumnName="donorProfileId" />
+                <ScalarProperty Name="donorsId" ColumnName="donorsId" />
+                <ScalarProperty Name="donorsMessage" ColumnName="donorsMessage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmerageContacts">
+            <EntityTypeMapping TypeName="PetaByteModel.EmerageContact">
+              <MappingFragment StoreEntitySet="EmerageContacts">
+                <ScalarProperty Name="emerageContactId" ColumnName="emerageContactId" />
+                <ScalarProperty Name="emergeFirstName" ColumnName="emergeFirstName" />
+                <ScalarProperty Name="emergeLastName" ColumnName="emergeLastName" />
+                <ScalarProperty Name="addressId" ColumnName="addressId" />
+                <ScalarProperty Name="emergePhone" ColumnName="emergePhone" />
+                <ScalarProperty Name="emergeRelationship" ColumnName="emergeRelationship" />
+                <ScalarProperty Name="emergeEmail" ColumnName="emergeEmail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="PetaByteModel.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+                <ScalarProperty Name="contactId" ColumnName="contactId" />
+                <ScalarProperty Name="addressId" ColumnName="addressId" />
+                <ScalarProperty Name="emerageContactID" ColumnName="emerageContactID" />
+                <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+                <ScalarProperty Name="sinNum" ColumnName="sinNum" />
+                <ScalarProperty Name="schedule" ColumnName="schedule" />
+                <ScalarProperty Name="admin" ColumnName="admin" />
+                <ScalarProperty Name="employeeStatusId" ColumnName="employeeStatusId" />
+                <ScalarProperty Name="insuranceId" ColumnName="insuranceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeSchedules">
+            <EntityTypeMapping TypeName="PetaByteModel.EmployeeSchedule">
+              <MappingFragment StoreEntitySet="EmployeeSchedule">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="BreakTimeBegin" ColumnName="BreakTimeBegin" />
+                <ScalarProperty Name="BreakTimeend" ColumnName="BreakTimeend" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="EmployeeFirstName" ColumnName="EmployeeFirstName" />
+                <ScalarProperty Name="EmployeeLastName" ColumnName="EmployeeLastName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeStatus">
+            <EntityTypeMapping TypeName="PetaByteModel.EmployeeStatu">
+              <MappingFragment StoreEntitySet="EmployeeStatus">
+                <ScalarProperty Name="employeeStatusId" ColumnName="employeeStatusId" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Faqs">
+            <EntityTypeMapping TypeName="PetaByteModel.Faq">
+              <MappingFragment StoreEntitySet="Faq">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="question" ColumnName="question" />
+                <ScalarProperty Name="answer" ColumnName="answer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GetHelps">
+            <EntityTypeMapping TypeName="PetaByteModel.GetHelp">
+              <MappingFragment StoreEntitySet="GetHelps">
+                <ScalarProperty Name="getHelpId" ColumnName="getHelpId" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="postalcode" ColumnName="postalcode" />
+                <ScalarProperty Name="province" ColumnName="province" />
+                <ScalarProperty Name="symptoms" ColumnName="symptoms" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GiftItems">
+            <EntityTypeMapping TypeName="PetaByteModel.GiftItem">
+              <MappingFragment StoreEntitySet="GiftItem">
+                <ScalarProperty Name="GiftItemId" ColumnName="GiftItemId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="GiftTypeId" ColumnName="GiftTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GiftTypes">
+            <EntityTypeMapping TypeName="PetaByteModel.GiftType">
+              <MappingFragment StoreEntitySet="GiftType">
+                <ScalarProperty Name="GiftTypeId" ColumnName="GiftTypeId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HospitalEvents">
+            <EntityTypeMapping TypeName="PetaByteModel.HospitalEvent">
+              <MappingFragment StoreEntitySet="HospitalEvents">
+                <ScalarProperty Name="eventsId" ColumnName="eventsId" />
+                <ScalarProperty Name="evntName" ColumnName="evntName" />
+                <ScalarProperty Name="evntDesc" ColumnName="evntDesc" />
+                <ScalarProperty Name="evntLoc" ColumnName="evntLoc" />
+                <ScalarProperty Name="evntDate" ColumnName="evntDate" />
+                <ScalarProperty Name="evntTimebg" ColumnName="evntTimebg" />
+                <ScalarProperty Name="evntTimefn" ColumnName="evntTimefn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Insurances">
+            <EntityTypeMapping TypeName="PetaByteModel.Insurance">
+              <MappingFragment StoreEntitySet="Insurances">
+                <ScalarProperty Name="insuranceId" ColumnName="insuranceId" />
+                <ScalarProperty Name="insuranceProiver" ColumnName="insuranceProiver" />
+                <ScalarProperty Name="policyNum" ColumnName="policyNum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobApplicants">
+            <EntityTypeMapping TypeName="PetaByteModel.JobApplicant">
+              <MappingFragment StoreEntitySet="JobApplicants">
+                <ScalarProperty Name="jobAppId" ColumnName="jobAppId" />
+                <ScalarProperty Name="jobId" ColumnName="jobId" />
+                <ScalarProperty Name="appJobTitle" ColumnName="appJobTitle" />
+                <ScalarProperty Name="appFirstName" ColumnName="appFirstName" />
+                <ScalarProperty Name="appLastName" ColumnName="appLastName" />
+                <ScalarProperty Name="appEmail" ColumnName="appEmail" />
+                <ScalarProperty Name="appLinkedIn" ColumnName="appLinkedIn" />
+                <ScalarProperty Name="appMessage" ColumnName="appMessage" />
+                <ScalarProperty Name="appCv" ColumnName="appCv" />
+                <ScalarProperty Name="appOtherFile" ColumnName="appOtherFile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobPostings">
+            <EntityTypeMapping TypeName="PetaByteModel.JobPosting">
+              <MappingFragment StoreEntitySet="JobPostings">
+                <ScalarProperty Name="jobId" ColumnName="jobId" />
+                <ScalarProperty Name="jobTitle" ColumnName="jobTitle" />
+                <ScalarProperty Name="jobDesc" ColumnName="jobDesc" />
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Navigations">
+            <EntityTypeMapping TypeName="PetaByteModel.Navigation">
+              <MappingFragment StoreEntitySet="Navigations">
+                <ScalarProperty Name="navId" ColumnName="navId" />
+                <ScalarProperty Name="navTitle" ColumnName="navTitle" />
+                <ScalarProperty Name="navUrl" ColumnName="navUrl" />
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OnCalls">
+            <EntityTypeMapping TypeName="PetaByteModel.OnCall">
+              <MappingFragment StoreEntitySet="OnCalls">
+                <ScalarProperty Name="onCallId" ColumnName="onCallId" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+                <ScalarProperty Name="startTime" ColumnName="startTime" />
+                <ScalarProperty Name="endTime" ColumnName="endTime" />
+                <ScalarProperty Name="volunteerId" ColumnName="volunteerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderPlaceds">
+            <EntityTypeMapping TypeName="PetaByteModel.OrderPlaced">
+              <MappingFragment StoreEntitySet="OrderPlaced">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pages">
+            <EntityTypeMapping TypeName="PetaByteModel.Page">
+              <MappingFragment StoreEntitySet="Pages">
+                <ScalarProperty Name="pageId" ColumnName="pageId" />
+                <ScalarProperty Name="pageTitle" ColumnName="pageTitle" />
+                <ScalarProperty Name="pageContent" ColumnName="pageContent" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+                <ScalarProperty Name="pageUrl" ColumnName="pageUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Passwords">
+            <EntityTypeMapping TypeName="PetaByteModel.Password">
+              <MappingFragment StoreEntitySet="Passwords">
+                <ScalarProperty Name="loginId" ColumnName="loginId" />
+                <ScalarProperty Name="password1" ColumnName="password1" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="passwordReset" ColumnName="passwordReset" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="PetaByteModel.Patient">
+              <MappingFragment StoreEntitySet="Patients">
+                <ScalarProperty Name="patientId" ColumnName="patientId" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="middleName" ColumnName="middleName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="physican" ColumnName="physican" />
+                <ScalarProperty Name="joinDate" ColumnName="joinDate" />
+                <ScalarProperty Name="contactId" ColumnName="contactId" />
+                <ScalarProperty Name="addressId" ColumnName="addressId" />
+                <ScalarProperty Name="healthCardNum" ColumnName="healthCardNum" />
+                <ScalarProperty Name="emerageContactID" ColumnName="emerageContactID" />
+                <ScalarProperty Name="insuranceId" ColumnName="insuranceId" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Allergies" ColumnName="Allergies" />
+                <ScalarProperty Name="relationship" ColumnName="relationship" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="postal" ColumnName="postal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientsRooms">
+            <EntityTypeMapping TypeName="PetaByteModel.PatientsRoom">
+              <MappingFragment StoreEntitySet="PatientsRooms">
+                <ScalarProperty Name="roomId" ColumnName="roomId" />
+                <ScalarProperty Name="patientId" ColumnName="patientId" />
+                <ScalarProperty Name="entryDate" ColumnName="entryDate" />
+                <ScalarProperty Name="exitDate" ColumnName="exitDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Positions">
+            <EntityTypeMapping TypeName="PetaByteModel.Position">
+              <MappingFragment StoreEntitySet="Positions">
+                <ScalarProperty Name="roleId" ColumnName="roleId" />
+                <ScalarProperty Name="roleDescription" ColumnName="roleDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubNavigations">
+            <EntityTypeMapping TypeName="PetaByteModel.SubNavigation">
+              <MappingFragment StoreEntitySet="SubNavigations">
+                <ScalarProperty Name="subNavId" ColumnName="subNavId" />
+                <ScalarProperty Name="navId" ColumnName="navId" />
+                <ScalarProperty Name="subNavTitle" ColumnName="subNavTitle" />
+                <ScalarProperty Name="subNavUrl" ColumnName="subNavUrl" />
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Symptoms">
+            <EntityTypeMapping TypeName="PetaByteModel.Symptom">
+              <MappingFragment StoreEntitySet="Symptoms">
+                <ScalarProperty Name="symptomsId" ColumnName="symptomsId" />
+                <ScalarProperty Name="symptName" ColumnName="symptName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tickets">
+            <EntityTypeMapping TypeName="PetaByteModel.Ticket">
+              <MappingFragment StoreEntitySet="Tickets">
+                <ScalarProperty Name="ticketId" ColumnName="ticketId" />
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+                <ScalarProperty Name="ticketStatu" ColumnName="ticketStatu" />
+                <ScalarProperty Name="getHelpId" ColumnName="getHelpId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="PetaByteModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="joinDate" ColumnName="joinDate" />
+                <ScalarProperty Name="roleId" ColumnName="roleId" />
+                <ScalarProperty Name="loginId" ColumnName="loginId" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VolunteerApplicants">
+            <EntityTypeMapping TypeName="PetaByteModel.VolunteerApplicant">
+              <MappingFragment StoreEntitySet="VolunteerApplicants">
+                <ScalarProperty Name="volunteerApplicantsId" ColumnName="volunteerApplicantsId" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="postal" ColumnName="postal" />
+                <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+                <ScalarProperty Name="startingDate" ColumnName="startingDate" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="available" ColumnName="available" />
+                <ScalarProperty Name="decision" ColumnName="decision" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Volunteers">
+            <EntityTypeMapping TypeName="PetaByteModel.Volunteer">
+              <MappingFragment StoreEntitySet="Volunteers">
+                <ScalarProperty Name="volunteerId" ColumnName="volunteerId" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+                <ScalarProperty Name="contactId" ColumnName="contactId" />
+                <ScalarProperty Name="addressId" ColumnName="addressId" />
+                <ScalarProperty Name="emerageContactID" ColumnName="emerageContactID" />
+                <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+                <ScalarProperty Name="schedule" ColumnName="schedule" />
+                <ScalarProperty Name="tasks" ColumnName="tasks" />
+                <ScalarProperty Name="onCall" ColumnName="onCall" />
+                <ScalarProperty Name="insuranceId" ColumnName="insuranceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WhatToBrings">
+            <EntityTypeMapping TypeName="PetaByteModel.WhatToBring">
+              <MappingFragment StoreEntitySet="WhatToBrings">
+                <ScalarProperty Name="whatToBringId" ColumnName="whatToBringId" />
+                <ScalarProperty Name="itemName" ColumnName="itemName" />
+                <ScalarProperty Name="departmentsId" ColumnName="departmentsId" />
+                <ScalarProperty Name="departmentName" ColumnName="departmentName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Feedbacks">
+            <EntityTypeMapping TypeName="PetaByteModel.Feedback">
+              <MappingFragment StoreEntitySet="Feedbacks">
+                <ScalarProperty Name="feedbackId" ColumnName="feedbackId" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="subject" ColumnName="subject" />
+                <ScalarProperty Name="feedback1" ColumnName="feedback" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderPlaceds1">
+            <EntityTypeMapping TypeName="PetaByteModel.OrderPlaced1">
+              <MappingFragment StoreEntitySet="OrderPlaceds">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Requests">
+            <EntityTypeMapping TypeName="PetaByteModel.Request">
+              <MappingFragment StoreEntitySet="Requests">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PurposeOfVisit" ColumnName="PurposeOfVisit" />
+                <ScalarProperty Name="HealthCardNum" ColumnName="HealthCardNum" />
+                <ScalarProperty Name="PatientFirstName" ColumnName="PatientFirstName" />
+                <ScalarProperty Name="PatientLastName" ColumnName="PatientLastName" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="PhysicianName" ColumnName="PhysicianName" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="DateofAppointment" ColumnName="DateofAppointment" />
+                <ScalarProperty Name="PreferredAppTime" ColumnName="PreferredAppTime" />
+                <ScalarProperty Name="PreferredDate" ColumnName="PreferredDate" />
+                <ScalarProperty Name="DateofRequest" ColumnName="DateofRequest" />
+                <ScalarProperty Name="DateApproved" ColumnName="DateApproved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
